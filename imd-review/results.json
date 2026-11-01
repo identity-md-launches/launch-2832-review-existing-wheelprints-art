@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "project": "Wheelprints",
+  "repository": "https://github.com/p20w355/wheelprints",
+  "pinnedInputCommit": "7c82c2ebe32d238feacd4896e9f56f599c1ac04f",
+  "checkedOutHead": "7c82c2ebe32d238feacd4896e9f56f599c1ac04f",
+  "reviewDateUTC": "2026-11-01",
+  "environment": { "os": "Linux (x86_64)", "node": "v24.21.0", "npm": "11.19.0", "install": "npm ci --ignore-scripts (lockfile unchanged)" },
+  "protectedManifest": {
+    "path": "preservation/manifest.json",
+    "sha256": "74a3654b8f9c0a030fd2a1e5112d418e92b86a9f4562b0fd8afd89c151351585",
+    "verifierPath": "scripts/verify-preservation.cjs",
+    "verifierSha256": "a75f33b4b28b927fb00d95a2af542570f4a8e6a9e336ad77c3b377dd0c08a24e",
+    "manifestAndVerifierUnchangedFromPinnedCommit": true
+  },
+  "preservation": {
+    "before": { "command": "node scripts/verify-preservation.cjs", "exitCode": 0, "result": "PASS: 144 protected files match SHA-256" },
+    "after": { "command": "node scripts/verify-preservation.cjs", "exitCode": 0, "result": "PASS: 144 protected files match SHA-256" },
+    "gitDiffAgainstPinnedCommit": "only new files under imd-review/ and tests/review/"
+  },
+  "checks": [
+    { "command": "node tests/testnet-ui-check.cjs", "exitCode": 0, "result": "passed (8 checks)" },
+    { "command": "npm run test:app", "exitCode": 0, "result": "passed" },
+    { "command": "npm run test:mint-flow", "exitCode": 0, "result": "passed" },
+    { "command": "npm run test:deployment-rejection", "exitCode": 0, "result": "passed" },
+    { "command": "npm run test:deployment-gas", "exitCode": 0, "result": "passed" },
+    { "command": "npm run test:exports:portable", "exitCode": 0, "result": "passed (portable hash mode; no raster pixel comparison)" },
+    { "command": "npm run test:contracts", "where": "disposable copy", "exitCode": 0, "result": "passed (12 grouped checks, local in-process EVM)" },
+    { "command": "npm run build:contracts", "where": "disposable copy", "exitCode": 0, "result": "reproduced; preservation PASS and git status clean in the copy afterwards" },
+    { "command": "npm run test:exports", "result": "not run", "reason": "strict PNG raster comparison; known environment mismatch disclosed by owner; not claimed" },
+    { "command": "node tests/review/wallet-flow-review.cjs", "exitCode": 0, "result": "passed (21 isolated fixture checks)", "new": true },
+    { "command": "node tests/review/live-readonly-check.cjs", "exitCode": 0, "result": "passed: runtime hash and artwork root match, 27 hosted SVGs hash-verified, block 12041936", "new": true, "readOnlyNetwork": true }
+  ],
+  "liveReadOnly": {
+    "chainId": 11155111,
+    "contract": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+    "runtimeCodeHash": "0xd4272dcf1b4aacfbfa71b919b930d5a88f0d602353d58a5971d006c51f801cbc",
+    "artworkBaseURL": "https://wheelprints-sepolia.pages.dev/",
+    "deploymentEnabled": false,
+    "testMintEnabledInConfig": true
+  },
+  "browsers": [
+    { "engine": "Chrome Headless Shell 156.0.8078.4 (Playwright 1.64.1)", "status": "failed-to-launch", "reason": "libnspr4.so missing on review machine" }
+  ],
+  "viewports": { "390px": "untested", "1440px": "untested" },
+  "realWalletOrDeviceTests": "untested (owner-led)",
+  "findings": ["F1", "F2", "F3", "F4"],
+  "publicTransactionBroadcast": false,
+  "walletSignatureRequested": false,
+  "websitePublication": false,
+  "contractDeployment": false,
+  "cloudflareOrDnsChange": false,
+  "imdHosting": false,
+  "paidChildJobs": false
+}
