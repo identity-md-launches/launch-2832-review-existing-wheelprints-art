@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "deploymentEnabled": false,
+  "status": "sepolia-test-mint-ready",
+  "reason": "The verified Sepolia contract is deployed. Further deployment is disabled. Use Test prints to review and mint a Sepolia test token.",
+  "liveEstimatedGas": 19906741,
+  "executionGasCap": 16777216,
+  "projectTotalGasBudget": 30000000,
+  "gasCapReference": "https://eips.ethereum.org/EIPS/eip-8037",
+  "simulatedArtifactSHA256": "476305aa4a9c968545dc14baa3b1fa86af92a994c67ac403d0d83afde6e70c30",
+  "evidence": "constructor-simulation.json",
+  "reviewedArtworkBaseURL": "https://wheelprints-sepolia.pages.dev/",
+  "nextStep": "Open /testnet/ on the stable Cloudflare origin, connect to Sepolia, review one test mint and its network fee, then approve it in your wallet. Save the mint transaction hash for verification.",
+  "deployedContractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "deploymentTransactionHash": "0x2c2726d1219306d40b32d534ed2f764292cc0e4536eb61426ffd158c8e124901"
+}

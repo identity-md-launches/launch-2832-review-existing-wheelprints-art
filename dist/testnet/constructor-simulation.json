@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:26:13.814Z",
+  "result": "passed",
+  "provider": "https://ethereum-sepolia-rpc.publicnode.com",
+  "purpose": "Unsigned, read-only constructor validation using the actual funded account and final hosted artwork URL.",
+  "stateOverridesUsed": false,
+  "blockOverridesUsed": false,
+  "signed": false,
+  "broadcast": false,
+  "artifactSHA256": "476305aa4a9c968545dc14baa3b1fa86af92a994c67ac403d0d83afde6e70c30",
+  "runtimeKeccak256": "0xd4272dcf1b4aacfbfa71b919b930d5a88f0d602353d58a5971d006c51f801cbc",
+  "runtimeBytes": 11132,
+  "sourceCheck": {
+    "blockNumber": 12037405,
+    "implementation": "0x284747C4664AF2203E7A90a2Ee76f22b6B5e6889"
+  },
+  "artworkBaseURL": "https://wheelprints-sepolia.pages.dev/",
+  "hostedArtworkVerified": true,
+  "estimatedTotalGas": "19906741",
+  "validation": {
+    "gasLimit": "21897416",
+    "gasUsed": "19748837",
+    "blockNumber": "0xb7ad1d",
+    "blockHash": "0x7a6016d376d8fbb9baa29b576582360b4ae7c364d4e285cb39b34cc9d0989d31",
+    "validation": true
+  },
+  "limitations": [
+    "Point-in-time public RPC validation; fees, balance and chain state can change.",
+    "eth_simulateV1 does not check signatures or contract-sender validity; sender code is checked separately.",
+    "Wallet signing, transaction inclusion, deployment receipt recovery and real minting remain untested."
+  ],
+  "references": [
+    "https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-eth",
+    "https://eips.ethereum.org/EIPS/eip-8037"
+  ]
+}

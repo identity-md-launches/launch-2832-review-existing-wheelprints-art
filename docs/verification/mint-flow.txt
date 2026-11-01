@@ -1,0 +1,1 @@
+PASS: public-RPC attestations, explicit sender in simulation/estimate, no wallet reads or signer during review, variant 26 receipt, rejected signature, source/runtime/artwork/eligibility guards, read outage/429, stale account, wrong chain, revalidation before signing, and pending receipt recovery. No real transaction submitted.

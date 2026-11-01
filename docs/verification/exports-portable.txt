@@ -1,0 +1,3 @@
+PASS: 27 exact source/treatment mappings, 81 files, valid 1600px SVG and 2400px PNG, matching JSON/embedded provenance, hashes, and stale-manifest fallback.
+PORTABLE MODE: raster pixel comparison not performed; exact archived PNG bytes were hash-verified.
+Static files: 59992296 bytes (57.2 MiB).

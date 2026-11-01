@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-01T00:26:16.973Z",
+  "source": "User report in this chat; not independently observed wallet actions",
+  "userStatement": "All seven wallet checks passed.",
+  "checks": [
+    "Paused deployment controls",
+    "Connection rejection and acceptance",
+    "Wrong network and Sepolia switching",
+    "Account change and disconnection",
+    "Reload and reconnect",
+    "Empty recovery hash rejected",
+    "Mint page stays closed"
+  ],
+  "walletAddressProvided": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "signedDeploymentTested": false,
+  "deploymentRecoveryTested": false,
+  "mintTested": false
+}

@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "checks": [
+    "All 27 selector combinations and URL round trips match",
+    "Undeployed configuration stays closed; wrong network and unsafe URLs are rejected",
+    "Runtime attestation rejects absent or modified code",
+    "Wallet permissions are requested only by explicit connect; stale account or network blocks send preparation",
+    "Artwork hash mismatch blocks mint preparation",
+    "Nested RPC rate limits are distinguished from genuine reverts without exposing request details",
+    "Generated contract commitments match every released SVG and the existing renderer",
+    "Controls begin disabled; verified mint configuration is installed and new deployment is closed"
+  ],
+  "count": 8
+}

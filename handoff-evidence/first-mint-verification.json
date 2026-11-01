@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T01:20:21.431027+00:00",
+  "result": "passed",
+  "chainId": 11155111,
+  "transactionHash": "0xd40480fdcbaaf507f300ebbd4dad7271f8ec3f38c788aec9be9d7e0fbf1fc2e1",
+  "contractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "tokenId": 1,
+  "owner": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "variantId": 26,
+  "composition": "Surge / Bloom / Midnight",
+  "blockNumber": 12037661,
+  "confirmationsAtExplorerCheck": 4,
+  "mintedAtUTC": "2026-11-01T01:18:12.000000Z",
+  "mintedAtDenver": "2026-10-31T19:18:12-06:00",
+  "mintPriceWei": "0",
+  "gasUsed": "477423",
+  "gasLimit": "738716",
+  "effectiveGasPriceWei": "26",
+  "feeWei": "12412998",
+  "metadata": {
+    "name": "Wheelprints Rehearsal #1 - Surge",
+    "description": "Free Sepolia-only ERC721 rehearsal. The image remains HTTPS-hosted; source snapshots and artwork SHA-256 commitments are preserved onchain. One mint per wallet per variant is a rehearsal rule, not a mainnet supply policy. No official Squeekchain endorsement or physical sensor truth is implied.",
+    "image": "https://wheelprints-sepolia.pages.dev/exports/Wheelprints_Surge_bloom_midnight.svg",
+    "external_url": "https://wheelprints-sepolia.pages.dev/",
+    "attributes": [
+      {
+        "trait_type": "Study",
+        "value": "Surge"
+      },
+      {
+        "trait_type": "Form",
+        "value": "bloom"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "midnight"
+      },
+      {
+        "trait_type": "Source round",
+        "value": 499
+      },
+      {
+        "trait_type": "Accepted passages",
+        "value": 615
+      },
+      {
+        "trait_type": "Completed Squeek blocks",
+        "value": 51
+      },
+      {
+        "trait_type": "Visual seed",
+        "value": "0x43269cc2"
+      }
+    ],
+    "variant_id": 26,
+    "source_chain_id": 11155111,
+    "source_core": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+    "source_stream_id": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+    "renderer_version": "wp-svg-0.1.0",
+    "renderer_source_sha256": "0x4f1a86802bf25920bf9e08470bba583fe295f29ddb0824414947ba807e3f2c1a",
+    "artwork_sha256": "0xa04955a1660097bf265822a27c2d0d7271bae4d17d4a0404f15ee83b6dcd96e1"
+  },
+  "hostedFiles": [
+    {
+      "path": "testnet/deployment.json",
+      "bytes": 948,
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "sha256": "3f469df4998a8d4ae87db5572e7c5a570e24bd2da42a698fa2cf17da297efc93",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/release-status.json",
+      "bytes": 1001,
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "sha256": "853de6ba9353ed85b77471884e294e1603fd2b4d24016794eb36171f9116d3f2",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/contract-artifact.json",
+      "bytes": 500371,
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "sha256": "476305aa4a9c968545dc14baa3b1fa86af92a994c67ac403d0d83afde6e70c30",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/commitments.json",
+      "bytes": 16021,
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "sha256": "837101cb75159a9130a1c88ad0fe650eb2f57daaa65e2748a388b73d09ad04a8",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/mint.js",
+      "bytes": 10345,
+      "httpStatus": 200,
+      "contentType": "application/javascript",
+      "sha256": "edc9160903dbafc3d799a2b658ba54ab1058b29780931b2aa7c4022abf1d2e6d",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/shared.js",
+      "bytes": 20675,
+      "httpStatus": 200,
+      "contentType": "application/javascript",
+      "sha256": "08f6b1f88ecab77047631ab59be3144a7da7df0625ef975bd1b63c1ad6beedce",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/deploy.js",
+      "bytes": 12280,
+      "httpStatus": 200,
+      "contentType": "application/javascript",
+      "sha256": "b4a1502c86c2aed0ebb991cd00c25b9c137da2dd93b2b6151be049e963f8f943",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/index.html",
+      "bytes": 5887,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a120ed022c54f0ff35634e28235b1fdb299d1943628bee6025349984c064e9a0",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "testnet/deploy.html",
+      "bytes": 5049,
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "cf24eb297fe716b8e5f8c16a99ec10c94e756f519dd74d6250a4ecffae56c190",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "art-engine.js",
+      "bytes": 18073,
+      "httpStatus": 200,
+      "contentType": "application/javascript",
+      "sha256": "4f1a86802bf25920bf9e08470bba583fe295f29ddb0824414947ba807e3f2c1a",
+      "matchesPackagedRelease": true
+    },
+    {
+      "path": "exports/Wheelprints_Surge_bloom_midnight.svg",
+      "bytes": 489663,
+      "httpStatus": 200,
+      "contentType": "image/svg+xml",
+      "sha256": "a04955a1660097bf265822a27c2d0d7271bae4d17d4a0404f15ee83b6dcd96e1",
+      "matchesPackagedRelease": true
+    }
+  ],
+  "deploymentEnabled": false,
+  "rabbyFixLive": true,
+  "checks": [
+    "Successful mint(26) on Sepolia to the existing contract, zero ETH value",
+    "ERC721 mint event assigns token 1 to the intended wallet",
+    "Current ownerOf(1) and tokenVariant(1) match",
+    "Decoded onchain tokenURI and all seven traits match the preserved commitments and recorded snapshot",
+    "Onchain metadata equals explorer-indexed metadata",
+    "Metadata image URL serves the exact committed SVG bytes",
+    "Live mint, shared, deployment controller, contract artifact, configuration, commitments, renderer and pages match the Rabby fix package",
+    "New contract deployment remains disabled"
+  ],
+  "limitations": [
+    "The optional minted(wallet,26) read was unavailable because the Blockscout RPC returned HTTP 429; no retry or fallback was used.",
+    "A real token transfer has not yet been tested. Explorer source-code publication remains separate from bytecode verification."
+  ],
+  "signedOrBroadcastByThisCheck": false,
+  "browserArtworkCheck": {
+    "checkedAt": "2026-11-01T01:20:43.552Z",
+    "caption": "Surge \u00b7 bloom / midnight",
+    "height": 1600,
+    "loaded": true,
+    "src": "https://wheelprints-sepolia.pages.dev/exports/Wheelprints_Surge_bloom_midnight.svg?v=a04955a1660097bf265822a27c2d0d7271bae4d17d4a0404f15ee83b6dcd96e1",
+    "width": 1600
+  }
+}

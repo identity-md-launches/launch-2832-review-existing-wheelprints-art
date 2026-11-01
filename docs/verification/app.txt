@@ -1,0 +1,2 @@
+PASS: same-origin static delivery; missing, offline, and stale-manifest Blob fallback; whitelisted sharing; replay/navigation/focus; exact exported provenance; and async PNG identity.
+Note: this harness checks application state and Blob contents, not browser save events or PNG raster pixels.

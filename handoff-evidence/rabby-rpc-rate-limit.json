@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-11-01T01:14:24.140328+00:00",
+  "method": "Read-only Brave DevTools inspection of the user-selected Wheelprints tab; paused on caught promise rejection during Review test mint.",
+  "site": "https://cdee4ba6.wheelprints-sepolia.pages.dev/testnet/?record=round-499&form=bloom&palette=midnight",
+  "wallet": "Rabby",
+  "chainId": 11155111,
+  "displayedError": "missing revert data",
+  "rpcEndpoint": "https://11155111.rpc.thirdweb.com/",
+  "httpStatus": 429,
+  "rpcMethod": "eth_call",
+  "to": "0xb6d7f55b80283abfdccc95c22764c2eab2ad23ac",
+  "data": "0x6063b4580000000000000000000000000000000000000000000000000000000000000000",
+  "decodedCall": "snapshotInfo(0)",
+  "rpcDetail": "You are using a public-good RPC with strict rate limits.",
+  "callStack": [
+    "Rabby pageProvider.js onResponse",
+    "BrowserProvider request",
+    "snapshotInfo",
+    "verifyContract shared.js:132",
+    "prepare mint.js:40"
+  ],
+  "signed": false,
+  "broadcast": false,
+  "cleanup": "Disabled pause on caught exceptions, resumed page, and closed DevTools after observing the error.",
+  "resolution": "Use the existing chain-checked public Sepolia read provider for full mint attestations, sender-specific simulation and estimate. Keep wallet chain/account guards and explicit wallet signing. Preserve the contract/artwork/commitments and deployment-disabled gate."
+}

@@ -1,0 +1,143 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const assert = require('node:assert/strict');
+const { keccak256 } = require('ethers');
+const { compile, project } = require('./contract-toolchain.cjs');
+const dist = path.join(project, 'dist');
+const engine = require(path.join(dist, 'art-engine.js'));
+const kit = require(path.join(dist, 'export-kit.js'));
+const manifest = require(path.join(dist, 'data/exports.js'));
+const data = JSON.parse(fs.readFileSync(path.join(dist, 'data/periods.json'), 'utf8'));
+const sha = input => crypto.createHash('sha256').update(input).digest('hex');
+const writeJSON = (location, value) => fs.writeFileSync(location, JSON.stringify(value, null, 2) + '\n');
+const fields = [
+  ['uint64', 'roundId'], ['uint64', 'startTimestamp'], ['uint64', 'endTimestamp'], ['uint64', 'work'], ['uint64', 'completedBlocks'],
+  ['uint64', 'cumulativeWorkBefore'], ['uint64', 'cumulativeWorkAfter'], ['uint96', 'cumulativeBlockUnitsBefore'],
+  ['uint96', 'cumulativeBlockUnitsAfter'], ['uint32', 'difficultyBefore'], ['uint32', 'difficultyAfter'], ['bytes32', 'dataHash']
+];
+assert.equal(data.chainId, '11155111');
+assert.equal(data.coreAddress.toLowerCase(), '0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44');
+assert.equal(data.streamId, '0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633');
+assert.deepEqual(data.periods.map(p => p.title), ['Drift', 'Pulse', 'Surge']);
+assert.deepEqual(engine.styles, ['orbit', 'current', 'bloom']);
+assert.deepEqual(engine.palettes, ['mineral', 'ember', 'midnight']);
+const cfg = data.chainVerification.configuration;
+assert.equal(String(cfg.genesisTimestamp), '1793022600');
+assert.equal(Number(cfg.roundDurationSeconds), 600);
+assert.equal(String(cfg.blockUnitsPerBlock), '1000000000');
+const sourceSnapshots = data.periods.map(period => {
+  const evidence = data.chainVerification.periods.find(p => p.id === period.id);
+  assert.equal(evidence.result, 'matched');
+  const historical = evidence.historicalViewEvidence;
+  const round = BigInt(period.roundStart), genesis = BigInt(cfg.genesisTimestamp), duration = BigInt(cfg.roundDurationSeconds);
+  const snap = {
+    roundId: String(round), startTimestamp: String(genesis + (round - 1n) * duration), endTimestamp: String(genesis + round * duration),
+    work: String(BigInt(historical.end.cumulativeWork) - BigInt(historical.start.cumulativeWork)),
+    completedBlocks: String(BigInt(historical.end.cumulativeBlockUnits) / 1000000000n - BigInt(historical.start.cumulativeBlockUnits) / 1000000000n),
+    cumulativeWorkBefore: historical.start.cumulativeWork, cumulativeWorkAfter: historical.end.cumulativeWork,
+    cumulativeBlockUnitsBefore: historical.start.cumulativeBlockUnits, cumulativeBlockUnitsAfter: historical.end.cumulativeBlockUnits,
+    difficultyBefore: historical.start.workPerThousandBlocks, difficultyAfter: historical.end.workPerThousandBlocks,
+    dataHash: historical.dataHash
+  };
+  assert.equal(snap.work, period.workUnits); assert.equal(snap.completedBlocks, String(period.blocks));
+  assert.equal(snap.cumulativeWorkAfter, period.cumulativeWorkEnd); assert.equal(snap.cumulativeBlockUnitsAfter, period.cumulativeBlockUnitsEnd);
+  assert.equal(new Date(Number(snap.startTimestamp) * 1000).toISOString(), new Date(period.startAt).toISOString());
+  assert.equal(new Date(Number(snap.endTimestamp) * 1000).toISOString(), new Date(period.endAt).toISOString());
+  return snap;
+});
+const variants = [];
+for (let sourceIndex = 0; sourceIndex < 3; sourceIndex++) for (let styleIndex = 0; styleIndex < 3; styleIndex++) for (let paletteIndex = 0; paletteIndex < 3; paletteIndex++) {
+  const period = data.periods[sourceIndex], style = engine.styles[styleIndex], palette = engine.palettes[paletteIndex];
+  const snapshot = kit.snapshot(data, period, { style, palette });
+  const entry = kit.staticEntry(manifest, data, snapshot);
+  assert.ok(entry, 'Static manifest must match before committing ' + kit.key(snapshot));
+  const svg = fs.readFileSync(path.join(dist, entry.files.svg.path));
+  assert.equal(sha(svg), entry.files.svg.sha256);
+  assert.equal(svg.toString(), kit.svg(snapshot));
+  const filename = 'Wheelprints_' + period.title + '_' + style + '_' + palette + '.svg';
+  assert.equal(entry.files.svg.path, 'exports/' + filename);
+  variants.push({
+    variantId: sourceIndex * 9 + styleIndex * 3 + paletteIndex, sourceIndex, recordId: period.id, title: period.title,
+    style, palette, seed: snapshot.record.seed, seedHex: snapshot.record.seedHex,
+    artworkSHA256: '0x' + entry.files.svg.sha256, svgPath: entry.files.svg.path, pngPath: entry.files.png.path
+  });
+}
+const rendererHash = sha(fs.readFileSync(path.join(dist, 'art-engine.js')));
+const packed = variants.map(v => v.seedHex + v.artworkSHA256.slice(2)).join('');
+assert.equal(packed.length / 2, 27 * 36);
+const library = `// SPDX-License-Identifier: MIT
+pragma solidity 0.8.38;
+
+// Generated by scripts/build-contracts.cjs from byte-verified archived exports.
+// The renderer remains offchain; these are exact file and source commitments.
+library WheelprintsCommitments {
+    struct Snapshot {
+${fields.map(([type, name]) => `        ${type} ${name};`).join('\n')}
+    }
+    error UnknownSourceIndex();
+    function rendererSourceHash() internal pure returns (bytes32) { return 0x${rendererHash}; }
+    function rendererVersion() internal pure returns (string memory) { return "${engine.version}"; }
+    function variant(uint8 id) internal pure returns (uint32 visualSeed, bytes32 svgSha256) {
+        assert(id < 27);
+        bytes memory packed = hex"${packed}";
+        assembly ("memory-safe") {
+            let offset := mul(id, 36)
+            visualSeed := shr(224, mload(add(add(packed, 32), offset)))
+            svgSha256 := mload(add(add(packed, 36), offset))
+        }
+    }
+    function snapshot(uint8 index) internal pure returns (Snapshot memory) {
+${sourceSnapshots.map((snap, i) => `        if (index == ${i}) return Snapshot({\n${fields.map(([, name]) => `            ${name}: ${snap[name]}`).join(',\n')}\n        });`).join('\n')}
+        revert UnknownSourceIndex();
+    }
+}
+`;
+fs.mkdirSync(path.join(project, 'contracts/generated'), { recursive: true });
+fs.mkdirSync(path.join(dist, 'testnet'), { recursive: true });
+fs.mkdirSync(path.join(dist, 'vendor'), { recursive: true });
+fs.writeFileSync(path.join(project, 'contracts/generated/WheelprintsCommitments.sol'), library);
+const commitments = {
+  schemaVersion: 1, version: 'wp-sepolia-0.1.0', contractName: 'WheelprintsSepolia', chainId: 11155111,
+  sourceCore: data.coreAddress, streamId: data.streamId, rendererVersion: engine.version, rendererSourceSHA256: '0x' + rendererHash,
+  variantCount: 27, variantOrdering: 'sourceIndex * 9 + styleIndex * 3 + paletteIndex',
+  sourceSnapshots, variants,
+  constructor: { inputs: [{ name: 'artworkBaseURL_', type: 'string' }], imagePathPrefix: 'exports/', requiresTrailingSlash: true, scheme: 'https', maximumURLBytes: 200 },
+  sourceImplementation: { address: '0x284747c4664af2203e7a90a2ee76f22b6b5e6889', version: '3', storageLayoutDigest: '0x9a9c008e029460808209571703fbf2679785874e0e6d3232f16a864d12abcb20' },
+  sourceReferences: data.periods.map((p, sourceIndex) => ({ sourceIndex, recordId: p.id, transactionHash: p.sourceTx, ethereumBlockNumber: p.sourceBlock })),
+  sourceReferenceAssurance: 'Transaction references are documented offchain references, not onchain-verified receipt proofs. The constructor reads and compares Core historical views.',
+  mintPolicy: 'Zero native mint payment; network gas remains payable. One mint per wallet per variant, to msg.sender. This is a rehearsal rule, not a mainnet supply policy or Sybil resistance.',
+  imageStorage: 'HTTPS-hosted exact SVG; SHA-256 committed onchain. Availability and future hosting integrity are not guaranteed by the contract.',
+  metadataStorage: 'Onchain base64 JSON with a constructor-fixed HTTPS site URL; no administrator or metadata updater.',
+  archivedExportNote: 'Original SVG bytes are preserved, including their historical pre-mint prototype metadata. The tokenURI describes the Sepolia rehearsal state.',
+  scope: 'Independent Sepolia rehearsal; no canonical project support, sensor-truth, or security-audit claim.'
+};
+writeJSON(path.join(dist, 'testnet/commitments.json'), commitments);
+const result = compile(['contracts/WheelprintsSepolia.sol']);
+const compiled = result.output.contracts['contracts/WheelprintsSepolia.sol'].WheelprintsSepolia;
+const bytecode = '0x' + compiled.evm.bytecode.object;
+const runtime = '0x' + compiled.evm.deployedBytecode.object;
+assert.ok((runtime.length - 2) / 2 <= 24576, 'Runtime exceeds EIP-170 limit.');
+assert.ok((bytecode.length - 2) / 2 + 288 < 49152, 'Initcode plus bounded URL args exceeds EIP-3860 limit.');
+const packageJSON = JSON.parse(fs.readFileSync(path.join(project, 'package.json'), 'utf8'));
+const artifact = {
+  schemaVersion: 1, version: 'wp-sepolia-0.1.0', contractName: 'WheelprintsSepolia', sourceName: 'contracts/WheelprintsSepolia.sol',
+  chainId: 11155111, abi: compiled.abi, bytecode, deployedBytecode: runtime,
+  immutableReferences: compiled.evm.deployedBytecode.immutableReferences,
+  linkReferences: compiled.evm.bytecode.linkReferences,
+  compiler: { name: 'solc', version: result.compilerVersion, settings: result.input.settings },
+  compilerInput: result.input, compilerInputSHA256: '0x' + sha(JSON.stringify(result.input)),
+  metadata: JSON.parse(compiled.metadata), storageLayout: compiled.storageLayout,
+  gasEstimates: compiled.evm.gasEstimates,
+  bytecodeBytes: (bytecode.length - 2) / 2, deployedBytecodeBytes: (runtime.length - 2) / 2,
+  runtimeKeccak256: keccak256(runtime), commitmentsSHA256: '0x' + sha(fs.readFileSync(path.join(dist, 'testnet/commitments.json'))),
+  dependencies: { '@openzeppelin/contracts': packageJSON.dependencies['@openzeppelin/contracts'], solc: packageJSON.devDependencies.solc, ethers: packageJSON.dependencies.ethers },
+  compilerWarnings: result.warnings.map(w => ({ code: w.errorCode, message: w.message }))
+};
+writeJSON(path.join(dist, 'testnet/contract-artifact.json'), artifact);
+fs.copyFileSync(path.join(project, 'node_modules/ethers/dist/ethers.umd.min.js'), path.join(dist, 'vendor/ethers.umd.min.js'));
+fs.copyFileSync(path.join(project, 'node_modules/ethers/LICENSE.md'), path.join(dist, 'vendor/ethers-LICENSE.md'));
+console.log('Compiled ' + artifact.contractName + ' with ' + result.compilerVersion + '.');
+console.log('Runtime ' + artifact.deployedBytecodeBytes + ' bytes; initcode ' + artifact.bytecodeBytes + ' bytes; 27 variants and 3 exact source snapshots.');
+console.log('Artifact, commitments, standard compiler input, immutable references, and pinned local ethers bundle are ready.');

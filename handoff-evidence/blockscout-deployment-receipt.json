@@ -1,0 +1,62 @@
+{
+  "from": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "to": null,
+  "token_transfers": [],
+  "decoded_input": null,
+  "user_operations": null,
+  "raw_input": "0x60808060405234610aa4576141c5803803809161001c828561118a565b8339810190602081830312610aa4578051906001600160401b038211610aa4570181601f82011215610aa4578051906001600160401b038211610a905760405192610071601f8401601f19166020018561118a565b82845260208383010111610aa457815f9260208093018386015e83010152604080519161009e828461118a565b601d83527f576865656c7072696e7473205365706f6c69612052656865617273616c00000060208401528151916100d5818461118a565b600883526715d4148b551154d560c21b602084015283516001600160401b038111610a90575f54600181",
+  "raw_input_truncated": true,
+  "has_error_in_internal_transactions": null,
+  "block_number": 12037558,
+  "exchange_rate": null,
+  "transaction_types": [
+    "contract_creation"
+  ],
+  "historic_exchange_rate": null,
+  "nonce": 111,
+  "timestamp": "2026-11-01T00:57:36.000000Z",
+  "base_fee_per_gas": "17",
+  "fhe_operations_count": 0,
+  "gas_price": "29",
+  "gas_limit": "29860112",
+  "fee": {
+    "type": "actual",
+    "value": "572716273"
+  },
+  "method": null,
+  "authorization_list": [],
+  "status": "ok",
+  "gas_used": "19748837",
+  "value": "0",
+  "created_contract": {
+    "ens_domain_name": null,
+    "hash": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+    "implementations": [],
+    "is_contract": false,
+    "is_scam": false,
+    "is_verified": false,
+    "metadata": null,
+    "name": null,
+    "private_tags": [],
+    "proxy_type": null,
+    "public_tags": [],
+    "reputation": "ok",
+    "watchlist_names": []
+  },
+  "transaction_tag": null,
+  "max_priority_fee_per_gas": null,
+  "position": 71,
+  "confirmations": 1,
+  "token_transfers_overflow": false,
+  "type": 0,
+  "transaction_burnt_fee": null,
+  "confirmation_duration": [
+    0,
+    12000
+  ],
+  "revert_reason": null,
+  "max_fee_per_gas": null,
+  "result": "success",
+  "is_pending_update": false,
+  "priority_fee": null
+}

@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Read-only corroboration for the independent Wheelprints Sepolia rehearsal; not a transaction or deployment record.",
+  "checkedAt": "2026-10-31T23:27:53.852972+00:00",
+  "provider": "https://ethereum-sepolia-rpc.publicnode.com",
+  "chainId": "11155111",
+  "fixedReadBlock": {
+    "number": "12037094",
+    "hash": "0x1a4c7a952a04ddcb73fb9eaa65c6fc0562b81318d882ecf06ae0f31694792d89",
+    "timestamp": "1793489040",
+    "timestampISO": "2026-10-31T23:24:00+00:00"
+  },
+  "observedCore": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+  "configuration": {
+    "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+    "genesisTimestamp": "1793022600",
+    "roundDuration": "600",
+    "maxWorkPerRound": "10000",
+    "maxRoundsPerBatch": "16",
+    "guardian": "0x3c4c2ba9a5dfbfc5e48dceabdd3b004131a04be6",
+    "reporter": "0xb317ab7cc24fd5d94ea120b3b189bc6527a7d0aa",
+    "initialWorkPerThousandBlocks": "10000",
+    "targetBlocksPerActiveRound": "40",
+    "difficultySmoothingRounds": "30",
+    "blockUnitsPerBlock": "1000000000"
+  },
+  "state": {
+    "settledThroughRound": "777",
+    "cumulativeWork": "62576",
+    "cumulativeBlockUnits": "5570108937680",
+    "blockHeight": "5570",
+    "blockProgress": "108937680",
+    "workPerThousandBlocks": "10937",
+    "authorizationNonce": "735",
+    "paused": false
+  },
+  "implementationIdentityGetters": {
+    "implementationCodeAddress": "0x284747c4664af2203e7a90a2ee76f22b6b5e6889",
+    "implementationCodeVersion": "3",
+    "implementationStorageLayoutDigest": "0x9a9c008e029460808209571703fbf2679785874e0e6d3232f16a864d12abcb20"
+  },
+  "eip1967ImplementationSlot": {
+    "slot": "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+    "value": "0x000000000000000000000000284747c4664af2203e7a90a2ee76f22b6b5e6889",
+    "address": "0x284747c4664af2203e7a90a2ee76f22b6b5e6889"
+  },
+  "runtimeCode": [
+    {
+      "address": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+      "codeBytes": 761,
+      "runtimeCodeHash": "0xeeb464727c2e09e309498a29e09c432fe9f0b6b4177f040ee2b517af64a32c36"
+    },
+    {
+      "address": "0x284747c4664af2203e7a90a2ee76f22b6b5e6889",
+      "codeBytes": 10344,
+      "runtimeCodeHash": "0xd8f2fb3c7dcf63e6dc0378ce5f85ceea52a876ae1f0cd66ac8631c3103371f8a"
+    }
+  ],
+  "historicalRoundPages": [
+    {
+      "roundId": 539,
+      "args": [
+        538,
+        539,
+        1
+      ],
+      "certifiedThroughRound": 539,
+      "recordCount": 1,
+      "start": {
+        "cumulativeWork": "45758",
+        "cumulativeBlockUnits": "4118503463521",
+        "workPerThousandBlocks": "12037"
+      },
+      "end": {
+        "cumulativeWork": "45957",
+        "cumulativeBlockUnits": "4135035822082",
+        "workPerThousandBlocks": "11801"
+      },
+      "dataHash": "0xcaa1bc5efb1f935a51d2f597e93270191feac43e9393d1e00928ba80b3443ab8",
+      "work": "199",
+      "completedBlocks": 17,
+      "startTimestamp": "1793345400",
+      "endTimestamp": "1793346000",
+      "expectedSnapshotMatch": true
+    },
+    {
+      "roundId": 517,
+      "args": [
+        516,
+        517,
+        1
+      ],
+      "certifiedThroughRound": 517,
+      "recordCount": 1,
+      "start": {
+        "cumulativeWork": "44956",
+        "cumulativeBlockUnits": "4052241470194",
+        "workPerThousandBlocks": "12177"
+      },
+      "end": {
+        "cumulativeWork": "45292",
+        "cumulativeBlockUnits": "4079834473396",
+        "workPerThousandBlocks": "12051"
+      },
+      "dataHash": "0x8e5ff6f1a1fa5fce6b9ac1cfff1b8cfe18d74ca5b14f8752097abec34d1c7dd2",
+      "work": "336",
+      "completedBlocks": 27,
+      "startTimestamp": "1793332200",
+      "endTimestamp": "1793332800",
+      "expectedSnapshotMatch": true
+    },
+    {
+      "roundId": 499,
+      "args": [
+        498,
+        499,
+        1
+      ],
+      "certifiedThroughRound": 499,
+      "recordCount": 1,
+      "start": {
+        "cumulativeWork": "41845",
+        "cumulativeBlockUnits": "3795395604865",
+        "workPerThousandBlocks": "12012"
+      },
+      "end": {
+        "cumulativeWork": "42460",
+        "cumulativeBlockUnits": "3846594406063",
+        "workPerThousandBlocks": "12124"
+      },
+      "dataHash": "0x27801d22f7a1da8b818ceb311b749190710f17e3d19c8a250ca942ada8978003",
+      "work": "615",
+      "completedBlocks": 51,
+      "startTimestamp": "1793321400",
+      "endTimestamp": "1793322000",
+      "expectedSnapshotMatch": true
+    }
+  ],
+  "explorerSource": {
+    "url": "https://eth-sepolia.blockscout.com/api/v2/smart-contracts/0x284747c4664af2203e7a90a2ee76f22b6b5e6889",
+    "implementation": "0x284747c4664af2203e7a90a2ee76f22b6b5e6889",
+    "sourceCodeSHA256": "37b9ec992f03a13b74b44810c8deab88b212a538a495cb59253b3ed3cf82968a",
+    "abiSHA256": "e953d994a6df37b5ccafeae1d8b1e5315fe5f7e7e505b3e87d362969b82c75a8",
+    "sourceEqualsPreviouslyArchived": true,
+    "abiEqualsPreviouslyArchived": true,
+    "isPartiallyVerified": true,
+    "isFullyVerified": false,
+    "compilerVersion": "0.8.36+commit.8a079791",
+    "relevantABI": [
+      {
+        "inputs": [],
+        "name": "configuration",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "bytes32",
+                "name": "streamId",
+                "type": "bytes32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "genesisTimestamp",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "roundDuration",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "maxWorkPerRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maxRoundsPerBatch",
+                "type": "uint16"
+              },
+              {
+                "internalType": "address",
+                "name": "guardian",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "reporter",
+                "type": "address"
+              },
+              {
+                "internalType": "uint32",
+                "name": "initialWorkPerThousandBlocks",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint64",
+                "name": "targetBlocksPerActiveRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "difficultySmoothingRounds",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint96",
+                "name": "blockUnitsPerBlock",
+                "type": "uint96"
+              }
+            ],
+            "internalType": "struct CoreConfiguration",
+            "name": "result",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "implementationCodeAddress",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "implementationCodeVersion",
+        "outputs": [
+          {
+            "internalType": "uint64",
+            "name": "",
+            "type": "uint64"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "implementationStorageLayoutDigest",
+        "outputs": [
+          {
+            "internalType": "bytes32",
+            "name": "",
+            "type": "bytes32"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint64",
+            "name": "afterRound",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "throughRound",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxRecords",
+            "type": "uint256"
+          }
+        ],
+        "name": "roundPage",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "certifiedThroughRound",
+                "type": "uint64"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "cumulativeWork",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint96",
+                    "name": "cumulativeBlockUnits",
+                    "type": "uint96"
+                  },
+                  {
+                    "internalType": "uint32",
+                    "name": "workPerThousandBlocks",
+                    "type": "uint32"
+                  }
+                ],
+                "internalType": "struct LedgerPosition",
+                "name": "start",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "cumulativeWork",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint96",
+                    "name": "cumulativeBlockUnits",
+                    "type": "uint96"
+                  },
+                  {
+                    "internalType": "uint32",
+                    "name": "workPerThousandBlocks",
+                    "type": "uint32"
+                  }
+                ],
+                "internalType": "struct LedgerPosition",
+                "name": "end",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint64",
+                    "name": "roundId",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint64",
+                    "name": "cumulativeWork",
+                    "type": "uint64"
+                  },
+                  {
+                    "internalType": "uint96",
+                    "name": "cumulativeBlockUnits",
+                    "type": "uint96"
+                  },
+                  {
+                    "internalType": "uint32",
+                    "name": "workPerThousandBlocks",
+                    "type": "uint32"
+                  },
+                  {
+                    "internalType": "bytes32",
+                    "name": "dataHash",
+                    "type": "bytes32"
+                  }
+                ],
+                "internalType": "struct RoundCheckpoint[]",
+                "name": "rounds",
+                "type": "tuple[]"
+              }
+            ],
+            "internalType": "struct RoundPage",
+            "name": "result",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "state",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint64",
+                "name": "settledThroughRound",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint64",
+                "name": "cumulativeWork",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint96",
+                "name": "cumulativeBlockUnits",
+                "type": "uint96"
+              },
+              {
+                "internalType": "uint64",
+                "name": "blockHeight",
+                "type": "uint64"
+              },
+              {
+                "internalType": "uint96",
+                "name": "blockProgress",
+                "type": "uint96"
+              },
+              {
+                "internalType": "uint32",
+                "name": "workPerThousandBlocks",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint256",
+                "name": "authorizationNonce",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "paused",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct CoreState",
+            "name": "result",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  },
+  "publishedManifest": {
+    "url": "https://docs.squeekchain.com/assets/deployments/sepolia.json",
+    "release": "squeeks-sepolia-core3-mining6-001",
+    "coreAddress": "0x74665dAecA35A2303e767E76a2FF1FB6F93e119f",
+    "matchesObservedCore": false
+  },
+  "semantics": {
+    "interval": "roundPage(afterRound,throughRound,maxRecords) has exclusive start and inclusive requested end; actual complete end is certifiedThroughRound.",
+    "roundNumbering": "Round r is 1-based [genesis+(r-1)*600,genesis+r*600).",
+    "checkpoints": "Only active nonzero-work rounds are stored; gaps within the certified frontier represent certified zero work.",
+    "blockCountFormula": "floor(end.cumulativeBlockUnits/1000000000)-floor(start.cumulativeBlockUnits/1000000000)",
+    "frontier": "throughRound must be <= state.settledThroughRound. Rounds after it are unknown, not zero."
+  },
+  "limitations": [
+    "Read results and code identity describe the fixed block only; deployment must repeat checks.",
+    "These calls do not independently prove the physical sensor readings or verify the original settlement transaction receipts. The prior chain-verification report covers the recorded receipt/event corroboration separately.",
+    "The published official manifest still names a different Core. Observed address functionality does not establish current canonical support, team approval, or endorsement.",
+    "Explorer marks the observed implementation partly verified, not fully verified.",
+    "Identity getters alone are self-reported by the running implementation; this report separately checks the proxy implementation storage slot and hashes the actual returned runtime code.",
+    "This is a bounded interface/data check, not a smart contract security audit."
+  ],
+  "browserRPCHeaderCheck": {
+    "recordedAt": "2026-10-31T23:29:55.437586+00:00",
+    "provider": "https://ethereum-sepolia-rpc.publicnode.com",
+    "origin": "https://genome1337.xyz",
+    "preflight": {
+      "method": "OPTIONS",
+      "requestedMethod": "POST",
+      "requestedHeaders": "content-type",
+      "status": 204,
+      "accessControlAllowOrigin": "*",
+      "accessControlAllowMethods": "GET,HEAD,OPTIONS,POST",
+      "accessControlAllowHeaders": "content-type"
+    },
+    "read": {
+      "method": "POST",
+      "rpcMethod": "eth_chainId",
+      "status": 200,
+      "result": "0xaa36a7",
+      "accessControlAllowOrigin": "*"
+    },
+    "conclusion": "Header responses permit credential-free cross-origin JSON-RPC from ordinary HTTPS sites; no signed-wallet browser end-to-end test was performed."
+  },
+  "evidenceScope": "Decoded public-provider source and implementation checks for the Sepolia rehearsal. Raw read-only RPC request/response evidence is retained with the project research. This file is not a deployment receipt or independent security audit."
+}

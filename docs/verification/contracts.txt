@@ -1,0 +1,3 @@
+PASS: 12 grouped contract/EVM checks, including 23 source fault cases, 27 minted variants, receiver reentry/rollback, and real frontend verification.
+{"deploymentEstimate":"2996125","deploymentUsed":"2996125","firstMintUsed":"104131","minMintUsed":"104131","maxMintUsed":"124043","tokenURIReadEstimate":"169381"}
+Runtime 11132 bytes; initcode 16837 bytes. No transaction broadcast outside local EVM.

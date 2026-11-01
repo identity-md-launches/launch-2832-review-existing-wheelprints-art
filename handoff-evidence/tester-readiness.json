@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-11-01T01:38:52.113041+00:00",
+  "scope": "Small invited Sepolia mint trial; not a mainnet or broad public launch review.",
+  "assessment": "ready-for-small-invited-trial",
+  "knownBlockingIssues": [],
+  "verifiedMints": [
+    {
+      "tokenId": 1,
+      "variantId": 26,
+      "composition": "Surge / Bloom / Midnight",
+      "transactionHash": "0xd40480fdcbaaf507f300ebbd4dad7271f8ec3f38c788aec9be9d7e0fbf1fc2e1"
+    },
+    {
+      "tokenId": 2,
+      "variantId": 4,
+      "composition": "Drift / Current / Ember",
+      "transactionHash": "0xe55596df86b60d290b46680dd56fd1a77bf3d6c799e34f842a194a22e3d06153"
+    }
+  ],
+  "deploymentEnabled": false,
+  "recommendedBeforeWiderSharing": [
+    "Observe successful mints from a few independent tester accounts and another wallet/browser; the two confirmed mints so far used the same wallet."
+  ],
+  "initialInviteRequirements": [
+    "Use the stable /testnet/ URL.",
+    "Explain Ethereum Sepolia, zero mint price, Sepolia ETH for gas, and one mint per wallet per composition.",
+    "Provide a Blockscout viewing link because the installed Rabby NFT gallery has no Sepolia filter.",
+    "Ask testers for transaction hashes, chosen composition, browser/wallet, and exact errors."
+  ],
+  "optionalDeferred": [
+    "Live transfer testing: intentionally skipped for this mint-focused trial.",
+    "Mobile coverage unless mobile support will be advertised."
+  ],
+  "unchangedLimitations": [
+    "Strict PNG pixel re-render equality was not reproduced on this Mac; preserved export bytes and portable checks pass.",
+    "No independent security audit. Public RPC availability is a dependency; errors still block signing checks."
+  ],
+  "actionsTaken": "Read-only verification, authorized Blockscout source publication, and local evidence/documentation updates. No invite sent, website uploaded, or blockchain transaction submitted.",
+  "sourcePublication": {
+    "status": "fully-verified-exact-match",
+    "url": "https://eth-sepolia.blockscout.com/address/0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac?tab=contract",
+    "verifiedAt": "2026-11-01T01:37:51.213551Z",
+    "sourceFiles": 21
+  }
+}

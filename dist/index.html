@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta name="description" content="Make an original print from recorded Squeektoshi activity. Explore three studies, choose a form and palette, replay the drawing, and keep the art. Free art beta.">
+  <title>Wheelprints — Art from recorded motion</title>
+  
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Wheelprints">
+  <meta property="og:title" content="Wheelprints — Small movements. Lasting impressions.">
+  <meta property="og:description" content="Turn recorded Squeektoshi activity into a print of your own. Three studies, three forms, three palettes. Free art beta.">
+  
+  
+  
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wheelprints — Art from recorded motion">
+  <meta name="twitter:description" content="Choose a recorded moment. Find your composition. Keep the print. Free art beta by Ian Demers.">
+  
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#studio">Skip to the studio</a>
+<header class="site-header wrap">
+  <a class="brand" href="#" aria-label="Wheelprints home"><svg viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="20" rx="16" ry="7"/><ellipse cx="20" cy="20" rx="16" ry="7" transform="rotate(60 20 20)"/><ellipse cx="20" cy="20" rx="16" ry="7" transform="rotate(120 20 20)"/></svg><span>Wheelprints<sup>001</sup></span></a>
+  <nav aria-label="Main navigation"><a href="#studio">Studio</a><a href="#records">The studies</a><a href="testnet/">Sepolia test prints <span aria-hidden="true">↗</span></a></nav>
+</header>
+<main>
+  <section class="intro wrap" aria-labelledby="page-title">
+    <div><p class="eyebrow"><span class="dot"></span> A Squeekchain experiment</p><h1 id="page-title">Small movements.<br><em>Lasting impressions.</em></h1></div>
+    <div class="intro-copy"><p>Original art shaped by Squeektoshi’s recorded work. Choose a moment, find your composition, and keep the print.</p><div class="status-line"><span>ART STUDIO 0.3</span><span>SEPOLIA REHEARSAL</span></div></div>
+  </section>
+  <noscript><section class="no-script wrap"><h2>The studio needs JavaScript.</h2><p>Enable JavaScript to choose a form, replay the drawing, and export a print. You can still <a href="assets/social-card.png">view the first three studies</a> or <a href="data/periods.json">read their source records</a>.</p></section></noscript>
+
+  <section id="studio" class="studio wrap" aria-labelledby="studio-heading">
+    <h2 id="studio-heading" class="sr-only" tabindex="-1">Wheelprints interactive studio</h2>
+    <div class="art-column">
+      <div class="canvas-topline"><span id="plate-number">STUDY 01 / 03</span><span id="canvas-type">ORBIT / MINERAL</span></div>
+      <div class="art-frame" id="art-frame" aria-label="Generated artwork"><div id="artwork"><p class="loading">Preparing the first print…</p></div></div>
+      <div class="replay-bar">
+        <button id="play" type="button" class="play-button" aria-label="Replay artwork construction"><span id="play-icon" aria-hidden="true">▶</span> <span id="play-label">Replay</span></button>
+        <label class="sr-only" for="progress">Artwork construction progress</label><input id="progress" type="range" min="0" max="100" value="100" step="1"><span id="progress-value" class="mono">100%</span>
+      </div>
+      <p class="replay-note">A replay of the drawing process. The recorded work shapes the art; the lines are not the hamster’s physical path.</p>
+    </div>
+
+    <aside class="controls" aria-labelledby="print-title">
+      <div class="selection-heading"><p class="eyebrow">Your print</p><h2 id="print-title">Drift</h2><p id="period-date" class="muted"></p></div>
+      <fieldset class="control-group"><legend><span>01</span> Choose a record</legend><div class="record-options" id="record-options"></div></fieldset>
+      <fieldset class="control-group"><legend><span>02</span> Find a form</legend><div class="segmented" id="style-options"><button type="button" data-style="orbit" aria-pressed="true">Orbit</button><button type="button" data-style="current" aria-pressed="false">Current</button><button type="button" data-style="bloom" aria-pressed="false">Bloom</button></div><p id="style-description" class="control-hint">Fine lines gather into an orbital sculpture.</p></fieldset>
+      <fieldset class="control-group"><legend><span>03</span> Set the palette</legend><div class="palette-options"><button type="button" data-palette="mineral" aria-pressed="true"><span class="swatch mineral" aria-hidden="true"></span>Mineral</button><button type="button" data-palette="ember" aria-pressed="false"><span class="swatch ember" aria-hidden="true"></span>Ember</button><button type="button" data-palette="midnight" aria-pressed="false"><span class="swatch midnight" aria-hidden="true"></span>Midnight</button></div></fieldset>
+      <div class="record-metrics"><div><strong id="work-count">199</strong><span>accepted passages</span></div><div><strong id="block-count">17</strong><span>Squeek blocks</span></div><div><strong>10<span class="unit">m</span></strong><span>recorded interval</span></div></div>
+      <div class="exports"><button type="button" id="export-png" class="button primary">Download PNG <span aria-hidden="true">↓</span></button><button type="button" id="export-svg" class="button secondary">Vector SVG <span aria-hidden="true">↓</span></button></div>
+      <div class="print-links"><button type="button" id="show-proof" class="text-button">View the source record <span aria-hidden="true">↗</span></button><button type="button" id="share-print" class="text-button">Copy print link <span aria-hidden="true">↗</span></button></div>
+      <div id="share-link-box" class="share-link-box" hidden><label for="share-url">Your print link</label><input id="share-url" type="text" readonly spellcheck="false" aria-describedby="share-help"><p id="share-help">Copy this link to keep the same record, form, and palette.</p></div>
+      <p class="export-note">Free artwork exports. Explore the separate <a id="testnet-link" href="testnet/">Sepolia test mint ↗</a> when its deployment is configured.</p>
+      <p id="app-status" class="app-status" role="status" aria-live="polite"></p>
+      <div id="export-recovery" class="export-recovery" hidden></div>
+    </aside>
+  </section>
+
+  <section id="records" class="studies wrap" aria-labelledby="studies-title">
+    <div class="section-heading"><div><p class="eyebrow">Three moments, one set of rules</p><h2 id="studies-title">The first studies</h2></div><p>Same form. Same palette. Different records.<br>Each composition begins with a real reported settlement.</p></div>
+    <div id="study-grid" class="study-grid"></div>
+    <p class="data-note">October 30, 2026 records from Squeekchain’s public Sepolia API, checked against public Sepolia events and historical Core views on October 31. The archived inputs keep each composition reproducible. <a href="data/chain-verification.json" target="_blank" rel="noopener noreferrer">See the recorded-value checks ↗</a></p>
+  </section>
+
+  <section class="mechanism wrap" aria-labelledby="mechanism-title">
+    <p class="eyebrow">The composition has a source</p><div class="mechanism-heading"><h2 id="mechanism-title">A record becomes<br>an original.</h2><p>The composition is deterministic. Keep the record, artistic settings and renderer version, and you can reproduce the same SVG. The replay reveals that composition over time.</p></div>
+    <div class="mechanism-rows"><div><span class="row-index">01</span><h3>Recorded work</h3><p>The accepted passage count controls the structure and density of the drawing.</p></div><div><span class="row-index">02</span><h3>Completed blocks</h3><p>The block count changes the rhythm and geometry. A source transaction anchors each study.</p></div><div><span class="row-index">03</span><h3>Your treatment</h3><p>Choose a form and palette. They become part of the reproducible print identity.</p></div></div>
+  </section>
+
+  <section id="build" class="build wrap" aria-labelledby="build-title">
+    <div class="section-heading"><div><p class="eyebrow">A concrete start</p><h2 id="build-title">From study to collectible.</h2></div><p>Built as an independent contribution to the Squeekchain ecosystem.</p></div>
+    <div class="build-grid"><article><span class="phase active">01 / IN THE ART STUDIO</span><h3>Make the art.</h3><p>Three recorded periods. Three forms. Three palettes. Deterministic SVGs, construction replay, and downloadable images with source records.</p></article><article><span class="phase">02 / SEPOLIA REHEARSAL</span><h3>Test the collectible.</h3><p>A dedicated test contract preserves source snapshots, seeds and artwork fingerprints. The mint opens only after a deployment is configured and checked. <a href="testnet/">Explore test prints ↗</a></p></article><article><span class="phase">03 / FUTURE COLLECTION</span><h3>Preserve the moment.</h3><p>The rehearsal uses web-hosted artwork. A fixed onchain art renderer and any mainnet collection are separate development milestones.</p></article></div>
+    <details class="build-notes"><summary>Read the beta boundaries and technical notes <span aria-hidden="true">+</span></summary><div class="notes-grid"><div><h3>What the data establishes</h3><p>The original source is an archived response from the project’s public API. Its three records were matched against public Sepolia event logs and historical Core views. The checks cover rounds, work, completed blocks, cumulative endpoints, transaction identities and timing.</p><p>Those checks corroborate values recorded on Ethereum. They do not establish physical sensor truth, contract security or official endorsement. “Work” means accepted magnet passages; it does not identify the animal’s physical path, direction or behavior.</p></div><div><h3>What comes next</h3><p>The Sepolia rehearsal pins the independently observed Core and verifies the archived values at deployment. The current developer reference identifies an older deployment generation, so official support remains unconfirmed. Genesis attribution and project approval remain separate team decisions.</p><p>Original artwork and renderer by the Wheelprints project. No Squeek NFT artwork is copied. The studio exports images; the separate testnet page reports whether a test contract is configured. No mainnet collection has been released.</p></div></div><div class="notes-links"><a href="https://docs.squeekchain.com/developers/core/" target="_blank" rel="noopener noreferrer">Core reference ↗</a><a href="data/periods.json" download="Wheelprints_Source_Periods.json">Download all source records ↓</a><a href="data/chain-verification.json" target="_blank" rel="noopener noreferrer">Recorded-value checks ↗</a><a href="data/SOURCE_NOTES.txt" target="_blank" rel="noopener noreferrer">Source notes ↗</a></div></details>
+  </section>
+
+  <section id="faq" class="launch-faq wrap" aria-labelledby="faq-title">
+    <div class="section-heading"><div><p class="eyebrow">Before you keep a print</p><h2 id="faq-title">A few useful answers.</h2></div><p>An art studio built around a recorded moment.</p></div>
+    <div class="faq-grid">
+      <details><summary>Is it free? Do I need a wallet?</summary><p>The studio is free to explore and export without a wallet. The separate Sepolia test mint uses a connected wallet and test ETH for network gas; its mint price is zero.</p></details>
+      <details><summary>Am I minting an NFT?</summary><p>Downloading a print from this studio does not create a token. The separate Sepolia page can create test tokens after its contract deployment is configured and checked. Test tokens do not promise a mainnet allocation or reward.</p></details>
+      <details><summary>Is the activity live?</summary><p>This release uses three ten-minute records from October 30, 2026, captured from Squeekchain’s public Sepolia API. Each print keeps that snapshot so the same settings can reproduce it.</p></details>
+      <details><summary>How do I keep or share a print?</summary><p>Choose your record, form, and palette, then download an SVG or PNG. The SVG includes source metadata; the source-record panel also provides a JSON file to keep alongside your image. Copy print link keeps the same composition in the studio.</p></details>
+    </div>
+  </section>
+</main>
+<footer class="site-footer wrap"><a class="brand footer-brand" href="#">Wheelprints<sup>001</sup></a><p>Independent art beta by Ian Demers.<br>Built with recorded Squeekchain activity. Not an official Squeekchain release.</p><a href="https://squeekchain.com/" target="_blank" rel="noopener noreferrer">Meet Squeektoshi ↗</a></footer>
+
+<dialog id="proof-dialog" aria-labelledby="proof-title"><div class="dialog-heading"><div><p class="eyebrow">Every print has a record</p><h2 id="proof-title">Source &amp; provenance</h2></div><button class="close-button" id="close-proof" aria-label="Close source record" type="button">×</button></div><p id="proof-summary"></p><dl id="proof-fields" class="proof-fields"></dl><p class="proof-caveat">The archived values were checked against public Sepolia events and historical Core views. That establishes recorded-value consistency, not sensor truth or contract security. Replay reveals the drawing process.</p><div class="dialog-actions"><a id="proof-tx" class="button primary" target="_blank" rel="noopener noreferrer">Inspect transaction ↗</a><button id="export-json" class="button secondary" type="button">Download record</button></div><div id="proof-export-recovery" class="export-recovery" hidden></div></dialog>
+<script src="data/periods.js"></script><script src="art-engine.js"></script><script src="export-kit.js"></script><script src="data/exports.js"></script><script src="app.js"></script>
+</body>
+</html>

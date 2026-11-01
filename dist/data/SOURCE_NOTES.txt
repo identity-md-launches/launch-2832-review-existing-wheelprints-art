@@ -1,0 +1,40 @@
+WHEELPRINTS - SOURCE NOTES
+Captured: 2026-10-30T19:34:56.085015Z
+Purpose: three project-API-reported Sepolia settlements for a recorded-data art beta. These are snapshots, not a live feed and not mainnet assets.
+
+SOURCES
+https://api.squeekchain.com/v1/settlements?range=24h  (schemaVersion 3)
+https://api.squeekchain.com/v1/core  (schemaVersion 1)
+https://api.squeekchain.com/v1/economy/state  (schemaVersion 2)
+All three returned HTTP 200 and status available. The settlements payload was generated at 2026-10-30T19:34:04.987Z.
+Core: 0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44
+Release: stream-game-sepolia-test-20261026-01
+Installation: stream-game-sepolia-test-20261025-01
+Core stream: 0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633
+
+ROUND BOUNDS
+roundStart and roundEnd are inclusive round IDs. startAt is inclusive; endAt is exclusive. Each selected period is exactly one round. The API record's previousSettledThroughRound is exclusive, so our first included round = that value + 1.
+Round 1 starts at genesis, as documented at https://docs.squeekchain.com/developers/core/ (Types; Integrator patterns). The current API reports genesisTimestamp 1793022600 (2026-10-26T13:50:00Z), roundDuration 600 seconds.
+startAt = genesis + (roundStart - 1) * 600.
+endAt = genesis + roundEnd * 600.
+These are derived round times, not transaction times. Settlement may occur later. The unchanged source records, including blockTimestamp, are retained in research/period-evidence.json.
+
+SELECTED INTERVALS (UTC)
+Drift: round 539, 2026-10-30T07:30:00Z to 2026-10-30T07:40:00Z, 199 work, 17 blocks; tx 0xae5fab9c7d4ec6eff15a8e9fb9657345a6485b8dd7f6d96b0d675f651aa6e36c
+Pulse: round 517, 2026-10-30T03:50:00Z to 2026-10-30T04:00:00Z, 336 work, 27 blocks; tx 0x638ed63c96cc81f4452e697ada7ea0df332ccb745df6b73c86a596e2a1c72f82
+Surge: round 499, 2026-10-30T00:50:00Z to 2026-10-30T01:00:00Z, 615 work, 51 blocks; tx 0xf7f8c0db49774700c85986a976faeefd813ea61eaa4ffe0e4d1a2b8b05eab487
+The titles Drift, Pulse and Surge are original editorial labels. They do not assert a hamster mood or continuous running speed. Work and completed-block counts are copied from workAdded and completedBlockCount for the SAME source transaction; they are not interpolated.
+
+RECORDED-VALUE CHECKS — OCTOBER 31, 2026
+All three archived records were checked against Blockscout Sepolia transaction/event data and PublicNode Core historical reads. The round bounds, accepted work, completed-block counts, cumulative endpoints, source transactions and source blocks matched. Core configuration() also matched the stream ID, genesis and 600-second round duration. See chain-verification.json for provider URLs, checkedAt timestamps, source block hashes, log indexes and exact historical endpoints.
+Historical reads were pinned to Ethereum block 12036964, hash 0xaa652d7142726304d85554bf6f1992475f800aa57ef9ada51c15a8ddf2ab02f8. Completed blocks were independently calculated as floor(end.cumulativeBlockUnits / 1000000000) minus floor(start.cumulativeBlockUnits / 1000000000).
+
+VERIFICATION LIMITS
+These public-provider checks corroborate recorded Ethereum values. They do not establish physical sensor truth, official endorsement, canonical project support or smart-contract security. No independently operated node or consensus audit is claimed. PublicNode did not return two older transaction receipts; successful Blockscout transaction/event responses and PublicNode historical views supplied the bounded corroboration for those records.
+The original API confirmationStatus and release label remain project-reported metadata. The sourceURL intentionally identifies the API that supplied the original snapshot; independent-check sources are recorded separately in chain-verification.json.
+The documented older Core v3/Mining v6 manifest differs from the API-reported current release (Core v3/Mining v9/Staking v2). Do not use these addresses or snapshots to prepare transactions. Obtain and verify the canonical current deployment and ABI first.
+
+REPRODUCIBILITY AND REPLAY
+periods.json and periods.js contain identical data; periods.js assigns window.WHEELPRINTS_DATA for offline file loading. All work and cumulative values remain decimal strings. blocks is an integer. Raw API replies and HTTP capture metadata are retained under research/, with selected records in period-evidence.json and raw-file SHA-256 checksums in SHA256SUMS.txt.
+The public settlements endpoint is a moving 24-hour window with a limited recent-settlement list. A future refetch may omit these exact records; preserve the snapshots for replay. CapturedAt is our UTC retrieval time, while generatedAt is the API's generation time. Rendering determinism also requires a fixed artwork algorithm/version and stable seed inputs; a reproducible image does not independently authenticate its source.
+API-driven SVG rendering is offchain artwork informed by reported settled data. This prototype does not mint, store an onchain art commitment, require a wallet or sign anything.

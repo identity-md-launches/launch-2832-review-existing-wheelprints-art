@@ -1,0 +1,31 @@
+{
+  "name": "wheelprints-sepolia-rehearsal",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Independent Wheelprints recorded-art beta and free Sepolia ERC721 rehearsal",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "build:exports": "node scripts/build-exports.cjs",
+    "test:exports": "node tests/exports-check.cjs",
+    "test:app": "node tests/app-check.cjs",
+    "build:contracts": "node scripts/build-contracts.cjs",
+    "test:contracts": "node tests/contracts-check.cjs",
+    "check:sepolia": "node scripts/check-sepolia.cjs",
+    "check:sepolia:funded": "node scripts/check-funded-sepolia.cjs",
+    "test:deployment-gas": "node tests/deployment-gas-check.cjs",
+    "test:deployment-rejection": "node tests/deployment-rejection-check.cjs",
+    "test:mint-flow": "node tests/mint-flow-check.cjs",
+    "test:exports:portable": "node tests/exports-check.cjs --portable"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1",
+    "ethers": "6.17.0"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5",
+    "solc": "0.8.38",
+    "hardhat": "2.29.1"
+  }
+}

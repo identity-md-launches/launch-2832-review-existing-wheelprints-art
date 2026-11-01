@@ -1,0 +1,1 @@
+PASS: preparation requires connection; checks all 27 artworks; sends only after acknowledgement; revalidates before wallet request; rejection saves no transaction/config; closed gate still blocks; mint stays disabled.

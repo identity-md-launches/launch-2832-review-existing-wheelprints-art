@@ -1,0 +1,24 @@
+{
+  "scan": "Pattern checks for credential strings, embedded auth URLs and local home paths; not a guarantee of secret absence",
+  "findings": [
+    {
+      "path": "tests/testnet-ui-check.cjs",
+      "kind": "URL credentials"
+    }
+  ],
+  "reviewedFindings": [
+    {
+      "path": "tests/testnet-ui-check.cjs",
+      "classification": "Intentional example.com user:secret URL rejection fixture; not a real credential"
+    }
+  ],
+  "unresolvedFindings": [],
+  "excludedFromPackage": [
+    "node_modules",
+    "deliverables",
+    ".git",
+    "macOS metadata",
+    "Python caches",
+    "environment/credential files"
+  ]
+}

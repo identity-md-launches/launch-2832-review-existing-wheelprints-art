@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:31:28.209542+00:00",
+  "result": "passed",
+  "purpose": "Prepare the authorized Cloudflare update for estimate review and first wallet confirmation rejection.",
+  "releaseStatus": "ready-for-wallet-rejection-check",
+  "deploymentPreparationEnabled": true,
+  "contractStatus": "not-deployed",
+  "contractAddress": null,
+  "transactionHash": null,
+  "uploaded": false,
+  "signed": false,
+  "broadcast": false,
+  "checks": {
+    "frontendGroups": 7,
+    "constructorValidationFailClosedCases": 9,
+    "rejectionController": "passed: no transaction request before acknowledgement; constructor revalidated before request; rejection saves no hash or configuration; closed gate remains effective; mint controls disabled",
+    "preservedArtworkFiles": 81,
+    "artworkVariants": 27,
+    "portableExportVerification": "passed; original bytes, dimensions and provenance checked; raster pixel comparison not performed"
+  },
+  "limitations": [
+    "Wallet rejection uses a local stub; user must reject the real wallet confirmation after upload.",
+    "Current live configuration has not been changed by preparing this local package.",
+    "No new contract build; the previously validated artifact is preserved."
+  ]
+}

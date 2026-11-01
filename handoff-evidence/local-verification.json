@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-31",
+  "environment": {
+    "node": "24.19.0",
+    "platform": "macOS",
+    "solidity": "0.8.38",
+    "localEVM": "Hardhat Cancun (functional tests, not live gas pricing)"
+  },
+  "checks": [
+    {
+      "command": "npm ci --ignore-scripts",
+      "result": "passed",
+      "note": "Pinned dependencies installed. Install audit reported 21 findings: 10 low, 4 moderate, 7 high. Production-only audit has zero; development-tool remediation not performed."
+    },
+    {
+      "command": "npm run build:contracts",
+      "result": "passed"
+    },
+    {
+      "command": "npm run test:contracts",
+      "result": "passed",
+      "groups": 12,
+      "sourceFaults": 23,
+      "variants": 27,
+      "exactPriorTokenURIComparison": true
+    },
+    {
+      "command": "node tests/testnet-ui-check.cjs",
+      "result": "passed",
+      "groups": 7
+    },
+    {
+      "command": "npm run test:deployment-gas",
+      "result": "passed",
+      "failureCases": 9
+    },
+    {
+      "command": "npm run test:app",
+      "result": "passed"
+    },
+    {
+      "command": "npm run test:exports",
+      "result": "failed",
+      "reason": "PNG re-render pixel mismatch for round-539/orbit/mineral. Original rendering environment not reproduced; no exported file was regenerated."
+    },
+    {
+      "command": "npm run test:exports:portable",
+      "result": "passed",
+      "files": 81,
+      "note": "Hashes, dimensions, seeds, exact SVG and provenance; explicitly skips raster pixel comparison."
+    },
+    {
+      "command": "npm run check:sepolia",
+      "result": "passed",
+      "evidence": "current-sepolia-preflight.json"
+    },
+    {
+      "command": "npm audit --omit=dev --json",
+      "result": "passed",
+      "advisories": 0
+    },
+    {
+      "command": "Local browser preview",
+      "result": "passed",
+      "note": "Deployment pause displayed, controls disabled, Surge/bloom/midnight selector and studio link correct. No live wallet."
+    }
+  ],
+  "remaining": [
+    "Final stable Cloudflare origin and hosted-byte checks",
+    "Funded-user-wallet rejection/network/account/signing/recovery checks",
+    "Real deployment, mint, transfer, metadata and explorer verification",
+    "Strict pixel reproducibility in original raster/font environment"
+  ],
+  "deploymentEnabled": false,
+  "publicTransactionsBroadcast": 0,
+  "cloudflareUploaded": false
+}

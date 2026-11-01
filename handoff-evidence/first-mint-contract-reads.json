@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-01T01:19:33.549Z",
+  "chainId": 11155111,
+  "contractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "block": "latest",
+  "results": {
+    "ownerOf": {
+      "status": "passed",
+      "value": "0x218736c626a2c846Ae465D39cDC40E8B8218427C"
+    },
+    "tokenVariant": {
+      "status": "passed",
+      "value": 26
+    },
+    "tokenURI": {
+      "status": "passed",
+      "value": "data:application/json;base64,eyJuYW1lIjoiV2hlZWxwcmludHMgUmVoZWFyc2FsICMxIC0gU3VyZ2UiLCJkZXNjcmlwdGlvbiI6IkZyZWUgU2Vwb2xpYS1vbmx5IEVSQzcyMSByZWhlYXJzYWwuIFRoZSBpbWFnZSByZW1haW5zIEhUVFBTLWhvc3RlZDsgc291cmNlIHNuYXBzaG90cyBhbmQgYXJ0d29yayBTSEEtMjU2IGNvbW1pdG1lbnRzIGFyZSBwcmVzZXJ2ZWQgb25jaGFpbi4gT25lIG1pbnQgcGVyIHdhbGxldCBwZXIgdmFyaWFudCBpcyBhIHJlaGVhcnNhbCBydWxlLCBub3QgYSBtYWlubmV0IHN1cHBseSBwb2xpY3kuIE5vIG9mZmljaWFsIFNxdWVla2NoYWluIGVuZG9yc2VtZW50IG9yIHBoeXNpY2FsIHNlbnNvciB0cnV0aCBpcyBpbXBsaWVkLiIsImltYWdlIjoiaHR0cHM6Ly93aGVlbHByaW50cy1zZXBvbGlhLnBhZ2VzLmRldi9leHBvcnRzL1doZWVscHJpbnRzX1N1cmdlX2Jsb29tX21pZG5pZ2h0LnN2ZyIsImV4dGVybmFsX3VybCI6Imh0dHBzOi8vd2hlZWxwcmludHMtc2Vwb2xpYS5wYWdlcy5kZXYvIiwiYXR0cmlidXRlcyI6W3sidHJhaXRfdHlwZSI6IlN0dWR5IiwidmFsdWUiOiJTdXJnZSJ9LHsidHJhaXRfdHlwZSI6IkZvcm0iLCJ2YWx1ZSI6ImJsb29tIn0seyJ0cmFpdF90eXBlIjoiUGFsZXR0ZSIsInZhbHVlIjoibWlkbmlnaHQifSx7InRyYWl0X3R5cGUiOiJTb3VyY2Ugcm91bmQiLCJ2YWx1ZSI6NDk5fSx7InRyYWl0X3R5cGUiOiJBY2NlcHRlZCBwYXNzYWdlcyIsInZhbHVlIjo2MTV9LHsidHJhaXRfdHlwZSI6IkNvbXBsZXRlZCBTcXVlZWsgYmxvY2tzIiwidmFsdWUiOjUxfSx7InRyYWl0X3R5cGUiOiJWaXN1YWwgc2VlZCIsInZhbHVlIjoiMHg0MzI2OWNjMiJ9XSwidmFyaWFudF9pZCI6MjYsInNvdXJjZV9jaGFpbl9pZCI6MTExNTUxMTEsInNvdXJjZV9jb3JlIjoiMHg5ODBiNDQyNGMwMDdjYWY3YTFmMzY3MGI0OGM4ZWFlZjdlYmMzZDQ0Iiwic291cmNlX3N0cmVhbV9pZCI6IjB4NTJlNDQzZTRlMGQyMzZmZjBjMDdmNGNkYzUxOGM1OTRhM2Q2ODBkMjBhYmIxNDgxNTEwZWZiZWQwZWM3MzYzMyIsInJlbmRlcmVyX3ZlcnNpb24iOiJ3cC1zdmctMC4xLjAiLCJyZW5kZXJlcl9zb3VyY2Vfc2hhMjU2IjoiMHg0ZjFhODY4MDJiZjI1OTIwYmY5ZTA4NDcwYmJhNTgzZmUyOTVmMjlkZGIwODI0NDE0OTQ3YmE4MDdlM2YyYzFhIiwiYXJ0d29ya19zaGEyNTYiOiIweGEwNDk1NWExNjYwMDk3YmYyNjU4MjJhMjdjMmQwZDcyNzFiYWU0ZDE3ZDRhMDQwNGYxNWVlODNiNmRjZDk2ZTEifQ=="
+    },
+    "minted": {
+      "status": "unavailable",
+      "error": "Error executing tool read_contract: Contract call errored: ClientResponseError: 429, message='Too Many Requests', url='https://api.blockscout.com/11155111/json-rpc'"
+    }
+  }
+}

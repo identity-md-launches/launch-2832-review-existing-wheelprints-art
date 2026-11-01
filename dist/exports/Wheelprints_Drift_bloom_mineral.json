@@ -1,0 +1,361 @@
+{
+  "project": "Wheelprints",
+  "prototypeVersion": "0.2",
+  "rendererVersion": "wp-svg-0.1.0",
+  "artworkState": "Deterministic artwork export; no NFT has been minted",
+  "title": "Drift",
+  "artisticSettings": {
+    "style": "bloom",
+    "palette": "mineral"
+  },
+  "rendering": {
+    "svgSize": 1600,
+    "finalProgress": 1,
+    "pngSize": 2400
+  },
+  "seed": 1411198138,
+  "seedHex": "541d2cba",
+  "seedPurpose": "Visual variation only; not a cryptographic commitment or secure randomness",
+  "source": {
+    "chainId": "11155111",
+    "chainName": "Sepolia",
+    "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+    "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+    "releaseId": "stream-game-sepolia-test-20261026-01",
+    "period": {
+      "id": "round-539",
+      "title": "Drift",
+      "description": "A lighter-work interval. The project API reports 199 work units and 17 completed Squeek blocks in this ten-minute settled round.",
+      "startAt": "2026-10-30T07:30:00Z",
+      "endAt": "2026-10-30T07:40:00Z",
+      "roundStart": 539,
+      "roundEnd": 539,
+      "workUnits": "199",
+      "blocks": 17,
+      "cumulativeWorkEnd": "45957",
+      "cumulativeBlockUnitsEnd": "4135035822082",
+      "sourceTx": "0xae5fab9c7d4ec6eff15a8e9fb9657345a6485b8dd7f6d96b0d675f651aa6e36c",
+      "sourceBlock": "12025244",
+      "sourceURL": "https://api.squeekchain.com/v1/settlements?range=24h",
+      "chainId": "11155111",
+      "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+      "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633"
+    },
+    "capturedAt": "2026-10-30T19:34:56.085015Z",
+    "apiURL": "https://api.squeekchain.com/v1/settlements?range=24h",
+    "verification": "Archived project-API records checked against public Sepolia event logs and Core historical views on October 31, 2026. This corroborates recorded values, not physical sensor truth or contract security.",
+    "chainVerification": {
+      "result": "All three archived periods matched public explorer events and independently queried Core historical state.",
+      "chainId": "11155111",
+      "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+      "configuration": {
+        "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+        "genesisTimestamp": "1793022600",
+        "roundDurationSeconds": 600,
+        "blockUnitsPerBlock": "1000000000"
+      },
+      "configurationRead": {
+        "provider": "PublicNode Sepolia JSON-RPC",
+        "url": "https://ethereum-sepolia-rpc.publicnode.com",
+        "function": "configuration()",
+        "readAtBlockNumber": "12036964",
+        "readAtBlockHash": "0xaa652d7142726304d85554bf6f1992475f800aa57ef9ada51c15a8ddf2ab02f8",
+        "readAtBlockTimestamp": "2026-10-31T22:57:48Z",
+        "checkedAt": "2026-10-31T22:58:17.771078+00:00"
+      },
+      "roundNumbering": "Round 1 starts at genesis; startAt=genesis+(roundStart-1)*600, endAt=genesis+roundEnd*600. Round IDs inclusive, time interval start-inclusive/end-exclusive.",
+      "blockCountFormula": "floor(end.cumulativeBlockUnits / 1000000000) - floor(start.cumulativeBlockUnits / 1000000000)",
+      "periods": [
+        {
+          "id": "round-539",
+          "title": "Drift",
+          "result": "matched",
+          "chainId": "11155111",
+          "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+          "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+          "transactionHash": "0xae5fab9c7d4ec6eff15a8e9fb9657345a6485b8dd7f6d96b0d675f651aa6e36c",
+          "transactionCheck": {
+            "provider": "Blockscout Sepolia API",
+            "url": "https://eth-sepolia.blockscout.com/api/v2/transactions/0xae5fab9c7d4ec6eff15a8e9fb9657345a6485b8dd7f6d96b0d675f651aa6e36c",
+            "checkedAt": "2026-10-31T22:55:58.563823+00:00",
+            "status": "success"
+          },
+          "sourceBlockNumber": "12025244",
+          "sourceBlockHash": "0xfa4b6efbafcfb1695991e04487d4cd4e803b7e743e73b001d8052d7dfcb89a89",
+          "sourceBlockTimestamp": "2026-10-30T07:40:48.000000Z",
+          "eventEvidence": {
+            "provider": "Blockscout Sepolia API",
+            "url": "https://eth-sepolia.blockscout.com/api/v2/transactions/0xae5fab9c7d4ec6eff15a8e9fb9657345a6485b8dd7f6d96b0d675f651aa6e36c/logs",
+            "checkedAt": "2026-10-31T22:57:04.944505+00:00",
+            "roundRecordedLogIndex": 127,
+            "batchSettledLogIndex": 128,
+            "roundRecordedTopic": "0x6f7efb5b00900843c192802a77e52da9f18fee1daa04089fc4bf159963c7968c",
+            "batchSettledTopic": "0x66d3b3a53f97d0ca9c3e3df2d021d50358ee2110678472c2dd7ebd9e2834634d",
+            "roundRecorded": {
+              "roundId": "539",
+              "work": "199",
+              "cumulativeWork": "45957",
+              "cumulativeBlockUnits": "4135035822082",
+              "workPerThousandBlocks": "11801",
+              "dataHash": "0xcaa1bc5efb1f935a51d2f597e93270191feac43e9393d1e00928ba80b3443ab8"
+            },
+            "batchSettled": {
+              "digest": "0x9aa6e79ae62404ad7e527d48ed0487c322f08b7b566d8bcb04d895c3030b8777",
+              "reporter": "0xB317AB7Cc24fD5d94EA120B3b189bc6527a7d0Aa",
+              "settledThroughRound": "539",
+              "nonce": "496",
+              "previousSettledThroughRound": "538",
+              "activeRoundCount": "1",
+              "cumulativeWork": "45957",
+              "cumulativeBlockUnits": "4135035822082"
+            }
+          },
+          "historicalViewEvidence": {
+            "provider": "PublicNode Sepolia JSON-RPC",
+            "url": "https://ethereum-sepolia-rpc.publicnode.com",
+            "checkedAt": "2026-10-31T22:58:17.771078+00:00",
+            "method": "eth_call",
+            "function": "roundPage(uint64,uint64,uint256)",
+            "args": [
+              "538",
+              "539",
+              "1"
+            ],
+            "readAtBlockNumber": "12036964",
+            "readAtBlockHash": "0xaa652d7142726304d85554bf6f1992475f800aa57ef9ada51c15a8ddf2ab02f8",
+            "start": {
+              "cumulativeWork": "45758",
+              "cumulativeBlockUnits": "4118503463521",
+              "workPerThousandBlocks": "12037"
+            },
+            "end": {
+              "cumulativeWork": "45957",
+              "cumulativeBlockUnits": "4135035822082",
+              "workPerThousandBlocks": "11801"
+            },
+            "dataHash": "0xcaa1bc5efb1f935a51d2f597e93270191feac43e9393d1e00928ba80b3443ab8"
+          },
+          "derived": {
+            "workUnits": "199",
+            "completedSqueekBlocks": 17,
+            "roundStart": 539,
+            "roundEnd": 539,
+            "startAt": "2026-10-30T07:30:00Z",
+            "endAt": "2026-10-30T07:40:00Z"
+          },
+          "matchedFields": [
+            "chainId",
+            "coreAddress",
+            "streamId",
+            "sourceTx",
+            "sourceBlock",
+            "roundStart",
+            "roundEnd",
+            "workUnits",
+            "blocks",
+            "cumulativeWorkEnd",
+            "cumulativeBlockUnitsEnd",
+            "startAt",
+            "endAt"
+          ]
+        },
+        {
+          "id": "round-517",
+          "title": "Pulse",
+          "result": "matched",
+          "chainId": "11155111",
+          "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+          "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+          "transactionHash": "0x638ed63c96cc81f4452e697ada7ea0df332ccb745df6b73c86a596e2a1c72f82",
+          "transactionCheck": {
+            "provider": "PublicNode Sepolia JSON-RPC",
+            "url": "https://ethereum-sepolia-rpc.publicnode.com",
+            "checkedAt": "2026-10-31T22:55:42.044084+00:00",
+            "method": "eth_getTransactionReceipt",
+            "status": "success"
+          },
+          "sourceBlockNumber": "12024154",
+          "sourceBlockHash": "0x3b5b644255d11dd1d16df16204859b8d65cb564e2195a241ebd9ba25bb2b54b2",
+          "sourceBlockTimestamp": "2026-10-30T04:00:36.000000Z",
+          "eventEvidence": {
+            "provider": "Blockscout Sepolia API",
+            "url": "https://eth-sepolia.blockscout.com/api/v2/transactions/0x638ed63c96cc81f4452e697ada7ea0df332ccb745df6b73c86a596e2a1c72f82/logs",
+            "checkedAt": "2026-10-31T22:57:04.945324+00:00",
+            "roundRecordedLogIndex": 289,
+            "batchSettledLogIndex": 290,
+            "roundRecordedTopic": "0x6f7efb5b00900843c192802a77e52da9f18fee1daa04089fc4bf159963c7968c",
+            "batchSettledTopic": "0x66d3b3a53f97d0ca9c3e3df2d021d50358ee2110678472c2dd7ebd9e2834634d",
+            "roundRecorded": {
+              "roundId": "517",
+              "work": "336",
+              "cumulativeWork": "45292",
+              "cumulativeBlockUnits": "4079834473396",
+              "workPerThousandBlocks": "12051",
+              "dataHash": "0x8e5ff6f1a1fa5fce6b9ac1cfff1b8cfe18d74ca5b14f8752097abec34d1c7dd2"
+            },
+            "batchSettled": {
+              "digest": "0xb89a5d943c31af82761575d1d8b6978c59163e989e1cf00a74d8a3584ddb8ee1",
+              "reporter": "0xB317AB7Cc24fD5d94EA120B3b189bc6527a7d0Aa",
+              "settledThroughRound": "517",
+              "nonce": "474",
+              "previousSettledThroughRound": "516",
+              "activeRoundCount": "1",
+              "cumulativeWork": "45292",
+              "cumulativeBlockUnits": "4079834473396"
+            }
+          },
+          "historicalViewEvidence": {
+            "provider": "PublicNode Sepolia JSON-RPC",
+            "url": "https://ethereum-sepolia-rpc.publicnode.com",
+            "checkedAt": "2026-10-31T22:58:17.771078+00:00",
+            "method": "eth_call",
+            "function": "roundPage(uint64,uint64,uint256)",
+            "args": [
+              "516",
+              "517",
+              "1"
+            ],
+            "readAtBlockNumber": "12036964",
+            "readAtBlockHash": "0xaa652d7142726304d85554bf6f1992475f800aa57ef9ada51c15a8ddf2ab02f8",
+            "start": {
+              "cumulativeWork": "44956",
+              "cumulativeBlockUnits": "4052241470194",
+              "workPerThousandBlocks": "12177"
+            },
+            "end": {
+              "cumulativeWork": "45292",
+              "cumulativeBlockUnits": "4079834473396",
+              "workPerThousandBlocks": "12051"
+            },
+            "dataHash": "0x8e5ff6f1a1fa5fce6b9ac1cfff1b8cfe18d74ca5b14f8752097abec34d1c7dd2"
+          },
+          "derived": {
+            "workUnits": "336",
+            "completedSqueekBlocks": 27,
+            "roundStart": 517,
+            "roundEnd": 517,
+            "startAt": "2026-10-30T03:50:00Z",
+            "endAt": "2026-10-30T04:00:00Z"
+          },
+          "matchedFields": [
+            "chainId",
+            "coreAddress",
+            "streamId",
+            "sourceTx",
+            "sourceBlock",
+            "roundStart",
+            "roundEnd",
+            "workUnits",
+            "blocks",
+            "cumulativeWorkEnd",
+            "cumulativeBlockUnitsEnd",
+            "startAt",
+            "endAt"
+          ]
+        },
+        {
+          "id": "round-499",
+          "title": "Surge",
+          "result": "matched",
+          "chainId": "11155111",
+          "coreAddress": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+          "streamId": "0x52e443e4e0d236ff0c07f4cdc518c594a3d680d20abb1481510efbed0ec73633",
+          "transactionHash": "0xf7f8c0db49774700c85986a976faeefd813ea61eaa4ffe0e4d1a2b8b05eab487",
+          "transactionCheck": {
+            "provider": "Blockscout Sepolia API",
+            "url": "https://eth-sepolia.blockscout.com/api/v2/transactions/0xf7f8c0db49774700c85986a976faeefd813ea61eaa4ffe0e4d1a2b8b05eab487",
+            "checkedAt": "2026-10-31T22:55:58.564176+00:00",
+            "status": "success"
+          },
+          "sourceBlockNumber": "12023262",
+          "sourceBlockHash": "0xbfdd13e41c0f0eeb18bd7bd208f7e24558a5f9e4fb27100b5dddd2a71d9b009f",
+          "sourceBlockTimestamp": "2026-10-30T01:00:36.000000Z",
+          "eventEvidence": {
+            "provider": "Blockscout Sepolia API",
+            "url": "https://eth-sepolia.blockscout.com/api/v2/transactions/0xf7f8c0db49774700c85986a976faeefd813ea61eaa4ffe0e4d1a2b8b05eab487/logs",
+            "checkedAt": "2026-10-31T22:57:04.945831+00:00",
+            "roundRecordedLogIndex": 252,
+            "batchSettledLogIndex": 253,
+            "roundRecordedTopic": "0x6f7efb5b00900843c192802a77e52da9f18fee1daa04089fc4bf159963c7968c",
+            "batchSettledTopic": "0x66d3b3a53f97d0ca9c3e3df2d021d50358ee2110678472c2dd7ebd9e2834634d",
+            "roundRecorded": {
+              "roundId": "499",
+              "work": "615",
+              "cumulativeWork": "42460",
+              "cumulativeBlockUnits": "3846594406063",
+              "workPerThousandBlocks": "12124",
+              "dataHash": "0x27801d22f7a1da8b818ceb311b749190710f17e3d19c8a250ca942ada8978003"
+            },
+            "batchSettled": {
+              "digest": "0xa0aba78d6939d38740564eb090b755fb0e7e82a1affd73c7b20b4906e8a2eda5",
+              "reporter": "0xB317AB7Cc24fD5d94EA120B3b189bc6527a7d0Aa",
+              "settledThroughRound": "499",
+              "nonce": "456",
+              "previousSettledThroughRound": "498",
+              "activeRoundCount": "1",
+              "cumulativeWork": "42460",
+              "cumulativeBlockUnits": "3846594406063"
+            }
+          },
+          "historicalViewEvidence": {
+            "provider": "PublicNode Sepolia JSON-RPC",
+            "url": "https://ethereum-sepolia-rpc.publicnode.com",
+            "checkedAt": "2026-10-31T22:58:17.771078+00:00",
+            "method": "eth_call",
+            "function": "roundPage(uint64,uint64,uint256)",
+            "args": [
+              "498",
+              "499",
+              "1"
+            ],
+            "readAtBlockNumber": "12036964",
+            "readAtBlockHash": "0xaa652d7142726304d85554bf6f1992475f800aa57ef9ada51c15a8ddf2ab02f8",
+            "start": {
+              "cumulativeWork": "41845",
+              "cumulativeBlockUnits": "3795395604865",
+              "workPerThousandBlocks": "12012"
+            },
+            "end": {
+              "cumulativeWork": "42460",
+              "cumulativeBlockUnits": "3846594406063",
+              "workPerThousandBlocks": "12124"
+            },
+            "dataHash": "0x27801d22f7a1da8b818ceb311b749190710f17e3d19c8a250ca942ada8978003"
+          },
+          "derived": {
+            "workUnits": "615",
+            "completedSqueekBlocks": 51,
+            "roundStart": 499,
+            "roundEnd": 499,
+            "startAt": "2026-10-30T00:50:00Z",
+            "endAt": "2026-10-30T01:00:00Z"
+          },
+          "matchedFields": [
+            "chainId",
+            "coreAddress",
+            "streamId",
+            "sourceTx",
+            "sourceBlock",
+            "roundStart",
+            "roundEnd",
+            "workUnits",
+            "blocks",
+            "cumulativeWorkEnd",
+            "cumulativeBlockUnitsEnd",
+            "startAt",
+            "endAt"
+          ]
+        }
+      ],
+      "limits": [
+        "Public providers corroborate recorded Ethereum values; this is not an independently operated node or consensus audit.",
+        "These checks do not establish physical sensor truth, animal identity, official endorsement, production readiness, or smart-contract security.",
+        "Historical roundPage views were read at one pinned October 31 block; event evidence separately corroborates original settlement values.",
+        "PublicNode returned null for Drift/Surge receipts and a pruned-history error for the initialization log. Blockscout successful transactions/events and PublicNode current historical views provided the bounded corroboration instead.",
+        "The archived release label is project-reported metadata, not an onchain identity attestation.",
+        "No mainnet contract deployment or collectible was created or verified in this task."
+      ]
+    }
+  },
+  "replay": "Construction of deterministic artwork, not a reconstruction of physical wheel trajectory"
+}

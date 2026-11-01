@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:54:41.535873+00:00",
+  "result": "passed",
+  "source": "Live Brave page accessibility state plus read-only Sepolia RPC and deployment.json checks",
+  "page": "https://wheelprints-sepolia.pages.dev/testnet/deploy",
+  "account": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "chainId": 11155111,
+  "pageStatus": "Release checks passed and the constructor simulation succeeded. Review the deployment below.",
+  "estimatedNetworkFeeSepoliaETH": "0.000000000855989863",
+  "reviewedGasLimit": 21897416,
+  "validationBlock": 12037539,
+  "deploymentStatusMessage": "The wallet request was declined. No new transaction was confirmed by this page.",
+  "recoveryHashField": "",
+  "deploymentSuccessPanelVisible": false,
+  "confirmedNonce": 111,
+  "pendingNonce": 111,
+  "nonceUnchangedFromFundedPreflight": true,
+  "contractStatus": "not-deployed",
+  "contractAddress": null,
+  "transactionHash": null,
+  "walletPopupInteractionDirectlyObserved": false,
+  "agentRequestedOrSignedTransaction": false,
+  "limitations": [
+    "The site reports wallet rejection; the wallet popup interaction itself was not observed.",
+    "Public RPC nonce and pending-state observations are point-in-time and provider-scoped.",
+    "No actual deployment, receipt recovery or minting has been tested."
+  ]
+}

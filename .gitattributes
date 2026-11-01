@@ -1,0 +1,3 @@
+# Preserve committed artwork, snapshots and compiler inputs byte for byte.
+# No automatic line-ending conversion in this frozen baseline.
+* -text

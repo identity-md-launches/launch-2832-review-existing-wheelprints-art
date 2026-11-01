@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T01:38:52.113041+00:00",
+  "result": "passed",
+  "status": "published-and-fully-verified-exact-match",
+  "contractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "chainId": 11155111,
+  "contractName": "WheelprintsSepolia",
+  "sourceURL": "https://eth-sepolia.blockscout.com/address/0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac?tab=contract",
+  "verifiedAtUTC": "2026-11-01T01:37:51.213551Z",
+  "verifiedAtDenver": "2026-10-31T19:37:51.213551-06:00",
+  "compilerVersion": "v0.8.38+commit.1835d247",
+  "optimizer": {
+    "enabled": true,
+    "runs": 1
+  },
+  "viaIR": true,
+  "evmVersion": "cancun",
+  "license": "MIT",
+  "sourceFiles": 21,
+  "runtimeKeccak256": "0xd4272dcf1b4aacfbfa71b919b930d5a88f0d602353d58a5971d006c51f801cbc",
+  "standardInputFileSHA256": "0x2fd668a09fd51bb3ec47ab52850ce5bee739ada5affee083e8661c1b10482ee2",
+  "constructorArtworkURL": "https://wheelprints-sepolia.pages.dev/",
+  "isFullyVerified": true,
+  "isPartiallyVerified": false,
+  "checks": [
+    "Fresh local compilation reproduces the deployed creation/runtime bytes, ABI and metadata",
+    "Live deployed runtime and exact deployment constructor bytes matched before submission",
+    "Blockscout reports verified, fully verified, not partially verified, with unchanged bytecode",
+    "All 21 published source files are byte-identical to the archived input",
+    "Published compiler, optimizer, viaIR, EVM target, metadata settings and existing MIT license match",
+    "Published ABI, creation bytecode including constructor arguments, runtime and decoded artwork URL match"
+  ],
+  "normalizationNote": "Blockscout expands outputSelection to all outputs and records empty libraries. Code-generation settings and all resulting bytecode match exactly.",
+  "signedOrBroadcast": false,
+  "redeployed": false,
+  "cloudflareUploadRequired": false,
+  "newDeploymentEnabled": false
+}

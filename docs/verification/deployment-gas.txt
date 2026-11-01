@@ -1,0 +1,1 @@
+PASS: transaction-validating constructor preflight; 9 fail-closed cases; no signing/broadcast; no production balance override.

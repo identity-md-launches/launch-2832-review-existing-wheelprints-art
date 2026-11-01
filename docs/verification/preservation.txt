@@ -1,0 +1,1 @@
+PASS: 144 protected files match SHA-256; all 81 artwork exports, existing Sepolia deployment and closed deployment gate are preserved.

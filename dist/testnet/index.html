@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f3f1e9"><meta name="robots" content="noindex">
+  <meta name="description" content="Rehearse a Wheelprints mint on Ethereum Sepolia. Test tokens, recorded Squeektoshi activity, and the same original art.">
+  <title>Wheelprints — Sepolia test prints</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="testnet.css">
+</head>
+<body>
+<a class="skip-link" href="#testnet-main">Skip to test prints</a>
+<header class="site-header wrap"><a class="brand" href="../">Wheelprints<sup>001</sup></a><nav aria-label="Main navigation"><a href="../#studio">Art studio</a><a href="#about">About the test</a></nav></header>
+<main id="testnet-main" class="wrap testnet-main">
+  <section class="testnet-intro"><p class="eyebrow"><span class="dot"></span> Ethereum Sepolia / rehearsal</p><h1>A first print.<br><em>A practice mint.</em></h1><p>Explore the same recorded moments as the art studio, then keep a test token on Sepolia. The mint price is zero. Your wallet pays network gas with test ETH.</p><div class="testnet-label">TEST TOKENS · NO MAINNET MINT</div></section>
+  <noscript><p class="notice">Enable JavaScript to use the test mint. The <a href="../">art studio</a> and downloadable artwork remain separate.</p></noscript>
+  <section class="mint-layout" aria-labelledby="selected-title">
+    <div class="mint-art"><img id="mint-image" src="../assets/social-card.png" alt="Wheelprints studies"><div class="mint-caption"><span id="selected-caption">Loading the available prints…</span><a id="studio-link" href="../#studio">Open in the studio ↗</a></div></div>
+    <div class="mint-panel">
+      <p class="eyebrow">Your test print</p><h2 id="selected-title">Choose a moment</h2>
+      <div class="select-fields"><label>Record<select id="mint-record" disabled><option value="0">Drift</option><option value="1">Pulse</option><option value="2">Surge</option></select></label><label>Form<select id="mint-form" disabled><option value="0">Orbit</option><option value="1">Current</option><option value="2">Bloom</option></select></label><label>Palette<select id="mint-palette" disabled><option value="0">Mineral</option><option value="1">Ember</option><option value="2">Midnight</option></select></label></div>
+      <div class="network-card"><div><span class="eyebrow">Release status</span><strong id="release-status">Checking configuration…</strong></div><p id="release-detail">Minting stays disabled until a Sepolia deployment has been configured and checked.</p><a id="contract-link" target="_blank" rel="noopener noreferrer" hidden>View test contract ↗</a></div>
+      <p id="wallet-status" class="wallet-status">Wallet disconnected</p>
+      <div class="action-stack"><button id="connect-wallet" type="button" class="button secondary" disabled>Connect wallet</button><button id="switch-network" type="button" class="button secondary" hidden>Switch to Sepolia</button><button id="prepare-mint" type="button" class="button primary" disabled>Review test mint</button></div>
+      <div id="mint-review" class="transaction-review" hidden><h3>Review this test mint</h3><dl id="mint-review-fields"></dl><p>Your wallet will show the final gas estimate. This transaction creates a Sepolia test token.</p><button id="confirm-mint" type="button" class="button primary" disabled>Confirm in wallet</button></div>
+      <p id="mint-status" role="status" aria-live="polite" class="transaction-status"></p><div id="mint-result" class="transaction-result" hidden></div>
+      <p class="small-note">One mint per wallet for each composition in this rehearsal. Different wallets can mint the same art variant. Test tokens do not promise a mainnet token, allocation, or reward.</p>
+    </div>
+  </section>
+  <section id="about" class="testnet-about"><p class="eyebrow">What this rehearsal preserves</p><h2>The record stays with the token.</h2><div class="about-columns"><div><h3>Saved in the contract</h3><p>The source snapshots, selected treatment, visual seed, and artwork fingerprint are fixed for this test release. Metadata is returned by the contract. The images are hosted with this website.</p></div><div><h3>Built from recorded values</h3><p>The three studies use archived Squeekchain rounds on Sepolia. The deployment checks their cumulative values against the observed Core contract. This is an independent experiment; official project support is unconfirmed.</p></div><div><h3>A rehearsal for the next phase</h3><p>This tests the wallet, mint, transfer, and metadata experience. A fully onchain art renderer and any mainnet collection require further work and separate decisions.</p></div></div><p><a href="../data/chain-verification.json" target="_blank" rel="noopener noreferrer">Read the source evidence ↗</a></p></section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="../">Wheelprints</a><p>Independent testnet project by Ian Demers.<br>Sepolia test tokens. Hosted artwork.</p><a href="deploy.html">Deployment receipt ↗</a></footer>
+<script src="../vendor/ethers.umd.min.js"></script><script src="shared.js"></script><script src="mint.js"></script>
+</body></html>

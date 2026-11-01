@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "chainId": 11155111,
+  "status": "deployed",
+  "contractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "transactionHash": "0x2c2726d1219306d40b32d534ed2f764292cc0e4536eb61426ffd158c8e124901",
+  "blockNumber": 12037558,
+  "blockHash": "0xeb650aeed6feb79b223a172beba170df0b937fb6fd76f277b13b89187c9018a8",
+  "deployer": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "artworkBaseURL": "https://wheelprints-sepolia.pages.dev/",
+  "runtimeCodeHash": "0xd4272dcf1b4aacfbfa71b919b930d5a88f0d602353d58a5971d006c51f801cbc",
+  "rendererSourceSHA256": "0x4f1a86802bf25920bf9e08470bba583fe295f29ddb0824414947ba807e3f2c1a",
+  "rendererVersion": "wp-svg-0.1.0",
+  "sourceCore": "0x980b4424c007caf7a1f3670b48c8eaef7ebc3d44",
+  "verifiedAt": "2026-11-01T01:00:15.433Z",
+  "notice": "Sepolia rehearsal only. JSON metadata and artwork fingerprints are onchain; SVG images are hosted. No mainnet token or reward is promised."
+}

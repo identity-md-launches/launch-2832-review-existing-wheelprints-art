@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-01T01:03:57.473443+00:00",
+  "result": "passed",
+  "releaseStatus": "sepolia-test-mint-ready",
+  "deploymentEnabled": false,
+  "configuredMintContract": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "frontendGroups": 7,
+  "mintControllerChecks": "passed",
+  "deploymentRejectionRegression": "passed using explicit pre-deployment fixture; shipped deployment gate is closed",
+  "firstMintSimulation": {
+    "result": "passed",
+    "variant": 0,
+    "estimatedGas": 383260,
+    "totalSupplyBefore": 0,
+    "totalSupplyAfter": 0,
+    "expectedTokenId": 1,
+    "signed": false,
+    "broadcast": false
+  },
+  "uploadedByCodex": false
+}

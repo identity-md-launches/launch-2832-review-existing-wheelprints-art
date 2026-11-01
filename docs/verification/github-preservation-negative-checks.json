@@ -1,0 +1,18 @@
+[
+  {
+    "case": "modified artwork",
+    "rejected": true
+  },
+  {
+    "case": "missing configuration",
+    "rejected": true
+  },
+  {
+    "case": "enabled deployment",
+    "rejected": true
+  },
+  {
+    "case": "unexpected application file",
+    "rejected": true
+  }
+]

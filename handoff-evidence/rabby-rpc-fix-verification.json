@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-11-01T01:14:00.945Z",
+  "sender": "0x218736c626a2c846Ae465D39cDC40E8B8218427C",
+  "contractAddress": "0xB6d7f55b80283AbFdCcC95C22764c2EAB2aD23Ac",
+  "variantId": 26,
+  "signed": false,
+  "broadcast": false,
+  "rpcMethods": {
+    "eth_blockNumber": 1,
+    "eth_chainId": 19,
+    "eth_getCode": 2,
+    "eth_call": 77,
+    "eth_getBalance": 1,
+    "eth_getTransactionCount": 3,
+    "eth_estimateGas": 1,
+    "eth_getBlockByNumber": 1,
+    "eth_gasPrice": 1,
+    "eth_maxPriorityFeePerGas": 1
+  },
+  "checks": [
+    "exact runtime, source identity, renderer identity, 27 variant commitments and 3 complete snapshots",
+    "live selected SVG SHA-256",
+    "live renderer SHA-256",
+    "mint simulation and gas estimate with connected sender, without a wallet signer",
+    "second full attestation, SVG check and sender-specific simulation before signing"
+  ],
+  "blockNumber": 12037639,
+  "chainId": 11155111,
+  "runtimeCodeHash": "0xd4272dcf1b4aacfbfa71b919b930d5a88f0d602353d58a5971d006c51f801cbc",
+  "totalSupplyBefore": "0",
+  "alreadyMinted": false,
+  "balanceSepoliaETH": "0.022998255798060032",
+  "nonceBefore": "0x70",
+  "simulatedTokenId": "1",
+  "estimatedGas": "492477",
+  "estimatedFee": "0.000000000018221649 Sepolia ETH (estimate)",
+  "totalSupplyAfter": "0",
+  "nonceAfter": "0x70",
+  "pendingNonce": "0x70",
+  "result": "passed"
+}
